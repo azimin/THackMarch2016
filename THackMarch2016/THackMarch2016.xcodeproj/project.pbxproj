@@ -10,6 +10,7 @@
 		82DA85E41C8AFC1000ADB899 /* FlightsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA85E31C8AFC1000ADB899 /* FlightsParser.swift */; };
 		82DA85E61C8B020000ADB899 /* TrainsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA85E51C8B020000ADB899 /* TrainsParser.swift */; };
 		82DA85E91C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA85E71C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift */; };
+		82DA85ED1C8B882400ADB899 /* TripsDataModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82DA85EC1C8B882400ADB899 /* TripsDataModel.plist */; };
 		920C13971C8B85BC00AE093D /* TripEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C13961C8B85BC00AE093D /* TripEntity.swift */; };
 		921714E31C8B691F00355736 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921714E21C8B691F00355736 /* ClientModel.swift */; };
 		92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */; };
@@ -87,6 +88,7 @@
 		82DA85E31C8AFC1000ADB899 /* FlightsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsParser.swift; sourceTree = "<group>"; };
 		82DA85E51C8B020000ADB899 /* TrainsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainsParser.swift; sourceTree = "<group>"; };
 		82DA85E71C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		82DA85EC1C8B882400ADB899 /* TripsDataModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TripsDataModel.plist; sourceTree = "<group>"; };
 		920C13961C8B85BC00AE093D /* TripEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripEntity.swift; sourceTree = "<group>"; };
 		921714E21C8B691F00355736 /* ClientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		92E7FA3F1C8AEF1F00AAEA57 /* THackMarch2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THackMarch2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,7 @@
 				92E7FA491C8AEF1F00AAEA57 /* Assets.xcassets */,
 				92E7FA4B1C8AEF1F00AAEA57 /* LaunchScreen.storyboard */,
 				92E7FA4E1C8AEF1F00AAEA57 /* Info.plist */,
+				82DA85EC1C8B882400ADB899 /* TripsDataModel.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				92E7FA9C1C8AF74A00AAEA57 /* Oswald-DemiBold.ttf in Resources */,
 				92E7FA481C8AEF1F00AAEA57 /* Main.storyboard in Resources */,
 				92E7FA9A1C8AF74A00AAEA57 /* Oswald-BoldItalic.ttf in Resources */,
+				82DA85ED1C8B882400ADB899 /* TripsDataModel.plist in Resources */,
 				92E7FA9D1C8AF74A00AAEA57 /* Oswald-Extra-LightItalic.ttf in Resources */,
 				92E7FA991C8AF74A00AAEA57 /* Oswald-Bold.ttf in Resources */,
 				92E7FA9E1C8AF74A00AAEA57 /* Oswald-ExtraLight.ttf in Resources */,

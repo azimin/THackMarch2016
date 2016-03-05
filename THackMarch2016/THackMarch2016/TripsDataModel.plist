@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>date</key>
+		<date>2016-03-05T21:37:09Z</date>
+		<key>fromCity</key>
+		<string>Berlin</string>
+		<key>toCity</key>
+		<string>London</string>
+		<key>time</key>
+		<integer>140</integer>
+		<key>flightNumber</key>
+		<string>AA053</string>
+		<key>status</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>date</key>
+		<date>2016-03-03T21:37:09Z</date>
+		<key>fromCity</key>
+		<string>Moscow</string>
+		<key>toCity</key>
+		<string>Berlin</string>
+		<key>time</key>
+		<integer>110</integer>
+		<key>flightNumber</key>
+		<string>SU2318</string>
+		<key>status</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>date</key>
+		<date>2016-03-10T21:37:09Z</date>
+		<key>fromCity</key>
+		<string>London</string>
+		<key>toCity</key>
+		<string>Moscow</string>
+		<key>time</key>
+		<integer>345</integer>
+		<key>flightNumber</key>
+		<string>BA320</string>
+		<key>status</key>
+		<integer>0</integer>
+	</dict>
+</array>
+</plist>
