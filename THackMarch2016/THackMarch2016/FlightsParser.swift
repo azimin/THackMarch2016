@@ -52,7 +52,8 @@ class SkyScannerAuth {
   let locale = "ru-RU"
   var pollingUrl: String?
   
-  func getLocationName(name: String, completion: (String)->()) {
+  func getLocationName(var name: String, completion: (String)->()) {
+    name = name.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
     let requestUrl = "http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/\(market)/\(currency)/\(locale)/?query=\(name)&apiKey=\(skyscannerApiKey)"
     Alamofire.request(.GET, requestUrl).responseJSON { (response) -> Void in
       switch response.result {

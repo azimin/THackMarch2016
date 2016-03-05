@@ -23,4 +23,3 @@ pod 'SDWebImage'
 
 pod 'Alamofire', :inhibit_warnings => true
 pod 'SwiftyJSON'
-pod 'IQKeyboardManagerSwift'
