@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  THackMarch2016
+//  Test
 //
 //  Created by Alex Zimin on 05/03/16.
 //  Copyright © 2016 Alex & Vadim. All rights reserved.
