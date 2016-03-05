@@ -13,6 +13,15 @@ class TripsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "TRIPS"
+    
+    let fp = FlightsParser()
+    fp.flightFromAirport("BERL-sky", toAirport: "MOSC-sky", onData: "2016-03-07", withCabinClass: "Business") {
+      flights in
+      // Do your work with flights here
+    }
+    SkyScannerAuth.sharedInstance.getLocationName("Berlin") { name in
+      print(name)
+    }
   }
   
   

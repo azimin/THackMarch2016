@@ -23,13 +23,6 @@ class LoginViewController: UIViewController {
     logoImageView.duration = 1.7
     logoImageView.curve = "spring"
     logoImageView.animate()
-
-    let fp = FlightsParser()
-    fp.flightFromAirport("BERL-sky", toAirport: "MOSC-sky", onData: "2016-03-07", withCabinClass: "Business") {
-      flights in
-      // Do your work with flights here
-    }
-
   }
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle {

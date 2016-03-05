@@ -32,7 +32,7 @@ class Flight {
 
 class FlightsParser {
   func flightFromAirport(origin: String, toAirport destination: String, onData date: String, withCabinClass cabinClass: String = "Business", completion: (([Flight])->())? = nil) {
-    SkyScannerAuth.sharedInstance.getSessionKey("RU", currency: "RUB", locale: "ru-RU", origin: origin, destination: destination, outboundDate: date, cabinClass: cabinClass) { () -> () in
+    SkyScannerAuth.sharedInstance.getSessionKey(origin, destination: destination, outboundDate: date, cabinClass: cabinClass) { () -> () in
       SkyScannerAuth.sharedInstance.getLivePrices() {
         flights in
           print("Success")
@@ -44,12 +44,32 @@ class FlightsParser {
 
 class SkyScannerAuth {
   static let sharedInstance = SkyScannerAuth()
+  let market = "RU"
+  let currency = "RUB"
+  let locale = "ru-RU"
   var pollingUrl: String?
   
-  func getSessionKey(country: String, // "RU"
-    currency: String, // "RUB"
-    locale: String, // "ru-RU"
-    origin: String, // "BERL-sky"
+  func getLocationName(name: String, completion: (String)->()) {
+    let requestUrl = "http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/\(market)/\(currency)/\(locale)/?query=\(name)&apiKey=\(skyscannerApiKey)"
+    Alamofire.request(.GET, requestUrl).responseJSON { (response) -> Void in
+      switch response.result {
+      case .Failure(let error):
+        print(error.localizedDescription)
+        completion("")
+        break
+      case .Success(let data):
+        if let places = JSON(data).dictionaryValue["Places"]?.arrayValue where places.count > 0 {
+          let place = places[0].dictionaryValue["CityId"]?.stringValue ?? ""
+          completion(place)
+        } else {
+          completion("")
+        }
+        break
+      }
+    }
+  }
+  
+  func getSessionKey(origin: String, // "BERL-sky"
     destination: String, // "MOSC-sky"
     outboundDate: String, // "2016-05-07"
     cabinClass: String, // "Business"
@@ -60,7 +80,7 @@ class SkyScannerAuth {
       
     // Custom
     fields["apiKey"] = skyscannerApiKey
-    fields["country"] = country
+    fields["country"] = market
     fields["currency"] = currency
     fields["locale"] = locale
     fields["originplace"] = origin
