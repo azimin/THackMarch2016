@@ -87,6 +87,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/ChameleonFramework.framework"
   install_framework "Pods/FrameAccessor.framework"
+  install_framework "Pods/JVFloatLabeledTextField.framework"
   install_framework "Pods/MGSwipeTableCell.framework"
   install_framework "Pods/OAuthSwift.framework"
   install_framework "Pods/Realm.framework"
@@ -94,7 +95,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SVProgressHUD.framework"
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftyJSON.framework"
-  install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/Timepiece.framework"
   install_framework "Pods/pop.framework"
 fi
@@ -102,6 +102,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/ChameleonFramework.framework"
   install_framework "Pods/FrameAccessor.framework"
+  install_framework "Pods/JVFloatLabeledTextField.framework"
   install_framework "Pods/MGSwipeTableCell.framework"
   install_framework "Pods/OAuthSwift.framework"
   install_framework "Pods/Realm.framework"
@@ -109,7 +110,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/SVProgressHUD.framework"
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftyJSON.framework"
-  install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/Timepiece.framework"
   install_framework "Pods/pop.framework"
 fi

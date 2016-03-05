@@ -35,7 +35,6 @@ class THStyleButton: UIButton {
   
   override func updateConstraints() {
     super.updateConstraints()
-    self.autoSetDimension(.Height, toSize: 44)
   }
   
   override func layoutSubviews() {

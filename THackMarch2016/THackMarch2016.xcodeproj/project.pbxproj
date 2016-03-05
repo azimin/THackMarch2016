@@ -65,6 +65,9 @@
 		92E7FB121C8B0FEC00AAEA57 /* TabBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FB101C8B0FEC00AAEA57 /* TabBarItem.xib */; };
 		92E7FB151C8B148300AAEA57 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB141C8B148300AAEA57 /* NavigationViewController.swift */; };
 		92E7FB171C8B14ED00AAEA57 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB161C8B14ED00AAEA57 /* Image.swift */; };
+		92E7FB1C1C8B21CA00AAEA57 /* THCircleVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB1B1C8B21CA00AAEA57 /* THCircleVIew.swift */; };
+		92E7FB1E1C8B24AD00AAEA57 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB1D1C8B24AD00AAEA57 /* TripTableViewCell.swift */; };
+		92E7FB221C8B289000AAEA57 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */; };
 		C5FE9618152BE27B9F21130B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F465A4FA21830BB714761C66 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +147,9 @@
 		92E7FB101C8B0FEC00AAEA57 /* TabBarItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItem.xib; sourceTree = "<group>"; };
 		92E7FB141C8B148300AAEA57 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		92E7FB161C8B14ED00AAEA57 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		92E7FB1B1C8B21CA00AAEA57 /* THCircleVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCircleVIew.swift; sourceTree = "<group>"; };
+		92E7FB1D1C8B24AD00AAEA57 /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		E91BC5E9A83E4377A5CF1BFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F465A4FA21830BB714761C66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -303,6 +309,7 @@
 				92E7FB0E1C8B0FE600AAEA57 /* TabBarItem */,
 				92E7FAFE1C8B0EA100AAEA57 /* AZTabBarController.swift */,
 				92E7FAAE1C8AFED900AAEA57 /* THStyleButton.swift */,
+				92E7FB1B1C8B21CA00AAEA57 /* THCircleVIew.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -369,7 +376,8 @@
 		92E7FB011C8B0F1F00AAEA57 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				92E7FB041C8B0F5600AAEA57 /* TripsViewController.swift */,
+				92E7FB1F1C8B286A00AAEA57 /* AllTrips */,
+				92E7FB201C8B287100AAEA57 /* AddTrip */,
 			);
 			name = Trips;
 			sourceTree = "<group>";
@@ -433,6 +441,31 @@
 				92E7FB131C8B146D00AAEA57 /* Navigation */,
 			);
 			name = Additional;
+			sourceTree = "<group>";
+		};
+		92E7FB1A1C8B1C2600AAEA57 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB1D1C8B24AD00AAEA57 /* TripTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		92E7FB1F1C8B286A00AAEA57 /* AllTrips */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB1A1C8B1C2600AAEA57 /* Cell */,
+				92E7FB041C8B0F5600AAEA57 /* TripsViewController.swift */,
+			);
+			name = AllTrips;
+			sourceTree = "<group>";
+		};
+		92E7FB201C8B287100AAEA57 /* AddTrip */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */,
+			);
+			name = AddTrip;
 			sourceTree = "<group>";
 		};
 		EB1AA26022F9DF1F0C9FF26E /* Frameworks */ = {
@@ -604,6 +637,7 @@
 				92E7FA5D1C8AF3C200AAEA57 /* RealmExtension.swift in Sources */,
 				82DA85E41C8AFC1000ADB899 /* FlightsParser.swift in Sources */,
 				82DA85E61C8B020000ADB899 /* TrainsParser.swift in Sources */,
+				92E7FB221C8B289000AAEA57 /* AddTripViewController.swift in Sources */,
 				92E7FA621C8AF52400AAEA57 /* DataModelMigration.swift in Sources */,
 				92E7FB071C8B0F5E00AAEA57 /* ProfileViewController.swift in Sources */,
 				92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */,
@@ -614,9 +648,11 @@
 				92E7FAFF1C8B0EA100AAEA57 /* AZTabBarController.swift in Sources */,
 				92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */,
 				92E7FB151C8B148300AAEA57 /* NavigationViewController.swift in Sources */,
+				92E7FB1E1C8B24AD00AAEA57 /* TripTableViewCell.swift in Sources */,
 				92E7FB171C8B14ED00AAEA57 /* Image.swift in Sources */,
 				92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */,
 				92E7FA5C1C8AF3C200AAEA57 /* ObjectExtension.swift in Sources */,
+				92E7FB1C1C8B21CA00AAEA57 /* THCircleVIew.swift in Sources */,
 				92E7FA611C8AF52400AAEA57 /* DataModelController.swift in Sources */,
 				92E7FAAF1C8AFED900AAEA57 /* THStyleButton.swift in Sources */,
 				92E7FB111C8B0FEC00AAEA57 /* TabBarItem.swift in Sources */,
