@@ -56,6 +56,15 @@
 		92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAF31C8B046B00AAEA57 /* ALView+PureLayout.m */; };
 		92E7FAFC1C8B046B00AAEA57 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAF51C8B046B00AAEA57 /* NSArray+PureLayout.m */; };
 		92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAF71C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m */; };
+		92E7FAFF1C8B0EA100AAEA57 /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAFE1C8B0EA100AAEA57 /* AZTabBarController.swift */; };
+		92E7FB051C8B0F5600AAEA57 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB041C8B0F5600AAEA57 /* TripsViewController.swift */; };
+		92E7FB071C8B0F5E00AAEA57 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB061C8B0F5E00AAEA57 /* ProfileViewController.swift */; };
+		92E7FB091C8B0F6400AAEA57 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB081C8B0F6400AAEA57 /* SettingsViewController.swift */; };
+		92E7FB0C1C8B0FC900AAEA57 /* UIView+AZViewFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB0B1C8B0FC900AAEA57 /* UIView+AZViewFromNib.m */; };
+		92E7FB111C8B0FEC00AAEA57 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB0F1C8B0FEC00AAEA57 /* TabBarItem.swift */; };
+		92E7FB121C8B0FEC00AAEA57 /* TabBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FB101C8B0FEC00AAEA57 /* TabBarItem.xib */; };
+		92E7FB151C8B148300AAEA57 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB141C8B148300AAEA57 /* NavigationViewController.swift */; };
+		92E7FB171C8B14ED00AAEA57 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB161C8B14ED00AAEA57 /* Image.swift */; };
 		C5FE9618152BE27B9F21130B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F465A4FA21830BB714761C66 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +134,16 @@
 		92E7FAF81C8B046B00AAEA57 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
 		92E7FAF91C8B046B00AAEA57 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
 		92E7FAFA1C8B046B00AAEA57 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		92E7FAFE1C8B0EA100AAEA57 /* AZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarController.swift; sourceTree = "<group>"; };
+		92E7FB041C8B0F5600AAEA57 /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		92E7FB061C8B0F5E00AAEA57 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		92E7FB081C8B0F6400AAEA57 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		92E7FB0A1C8B0FC900AAEA57 /* UIView+AZViewFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AZViewFromNib.h"; sourceTree = "<group>"; };
+		92E7FB0B1C8B0FC900AAEA57 /* UIView+AZViewFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AZViewFromNib.m"; sourceTree = "<group>"; };
+		92E7FB0F1C8B0FEC00AAEA57 /* TabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		92E7FB101C8B0FEC00AAEA57 /* TabBarItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItem.xib; sourceTree = "<group>"; };
+		92E7FB141C8B148300AAEA57 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		92E7FB161C8B14ED00AAEA57 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E91BC5E9A83E4377A5CF1BFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F465A4FA21830BB714761C66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -225,7 +244,8 @@
 		92E7FA561C8AF34D00AAEA57 /* ViewControllers+Cells */ = {
 			isa = PBXGroup;
 			children = (
-				92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */,
+				92E7FB181C8B160300AAEA57 /* MainTabs */,
+				92E7FB191C8B160800AAEA57 /* Additional */,
 			);
 			name = "ViewControllers+Cells";
 			sourceTree = "<group>";
@@ -252,9 +272,11 @@
 		92E7FA591C8AF3A800AAEA57 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FB0D1C8B0FCF00AAEA57 /* ViewFromNib */,
 				92E7FA5A1C8AF3C200AAEA57 /* ObjectExtension.swift */,
 				92E7FA5B1C8AF3C200AAEA57 /* RealmExtension.swift */,
 				92E7FAA81C8AFC4400AAEA57 /* UIColorExtension.swift */,
+				92E7FB161C8B14ED00AAEA57 /* Image.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +300,8 @@
 		92E7FA881C8AF6F300AAEA57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FB0E1C8B0FE600AAEA57 /* TabBarItem */,
+				92E7FAFE1C8B0EA100AAEA57 /* AZTabBarController.swift */,
 				92E7FAAE1C8AFED900AAEA57 /* THStyleButton.swift */,
 			);
 			name = Views;
@@ -332,6 +356,83 @@
 				92E7FAFA1C8B046B00AAEA57 /* PureLayoutDefines.h */,
 			);
 			name = PureLayout;
+			sourceTree = "<group>";
+		};
+		92E7FB001C8B0F1600AAEA57 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		92E7FB011C8B0F1F00AAEA57 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB041C8B0F5600AAEA57 /* TripsViewController.swift */,
+			);
+			name = Trips;
+			sourceTree = "<group>";
+		};
+		92E7FB021C8B0F2700AAEA57 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB061C8B0F5E00AAEA57 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		92E7FB031C8B0F3000AAEA57 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB081C8B0F6400AAEA57 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		92E7FB0D1C8B0FCF00AAEA57 /* ViewFromNib */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB0A1C8B0FC900AAEA57 /* UIView+AZViewFromNib.h */,
+				92E7FB0B1C8B0FC900AAEA57 /* UIView+AZViewFromNib.m */,
+			);
+			name = ViewFromNib;
+			sourceTree = "<group>";
+		};
+		92E7FB0E1C8B0FE600AAEA57 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB0F1C8B0FEC00AAEA57 /* TabBarItem.swift */,
+				92E7FB101C8B0FEC00AAEA57 /* TabBarItem.xib */,
+			);
+			name = TabBarItem;
+			sourceTree = "<group>";
+		};
+		92E7FB131C8B146D00AAEA57 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB141C8B148300AAEA57 /* NavigationViewController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		92E7FB181C8B160300AAEA57 /* MainTabs */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB011C8B0F1F00AAEA57 /* Trips */,
+				92E7FB021C8B0F2700AAEA57 /* Profile */,
+				92E7FB031C8B0F3000AAEA57 /* Settings */,
+			);
+			name = MainTabs;
+			sourceTree = "<group>";
+		};
+		92E7FB191C8B160800AAEA57 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FB001C8B0F1600AAEA57 /* Login */,
+				92E7FB131C8B146D00AAEA57 /* Navigation */,
+			);
+			name = Additional;
 			sourceTree = "<group>";
 		};
 		EB1AA26022F9DF1F0C9FF26E /* Frameworks */ = {
@@ -428,6 +529,7 @@
 				92E7FAA31C8AF74A00AAEA57 /* Oswald-Medium.ttf in Resources */,
 				92E7FAA21C8AF74A00AAEA57 /* Oswald-LightItalic.ttf in Resources */,
 				92E7FAA41C8AF74A00AAEA57 /* Oswald-MediumItalic.ttf in Resources */,
+				92E7FB121C8B0FEC00AAEA57 /* TabBarItem.xib in Resources */,
 				92E7FAA11C8AF74A00AAEA57 /* Oswald-Light.ttf in Resources */,
 				92E7FAA51C8AF74A00AAEA57 /* Oswald-Regular.ttf in Resources */,
 				92E7FA9F1C8AF74A00AAEA57 /* Oswald-Heavy.ttf in Resources */,
@@ -503,13 +605,21 @@
 				82DA85E41C8AFC1000ADB899 /* FlightsParser.swift in Sources */,
 				82DA85E61C8B020000ADB899 /* TrainsParser.swift in Sources */,
 				92E7FA621C8AF52400AAEA57 /* DataModelMigration.swift in Sources */,
+				92E7FB071C8B0F5E00AAEA57 /* ProfileViewController.swift in Sources */,
 				92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				92E7FAFC1C8B046B00AAEA57 /* NSArray+PureLayout.m in Sources */,
+				92E7FB051C8B0F5600AAEA57 /* TripsViewController.swift in Sources */,
+				92E7FB0C1C8B0FC900AAEA57 /* UIView+AZViewFromNib.m in Sources */,
+				92E7FB091C8B0F6400AAEA57 /* SettingsViewController.swift in Sources */,
+				92E7FAFF1C8B0EA100AAEA57 /* AZTabBarController.swift in Sources */,
 				92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */,
+				92E7FB151C8B148300AAEA57 /* NavigationViewController.swift in Sources */,
+				92E7FB171C8B14ED00AAEA57 /* Image.swift in Sources */,
 				92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */,
 				92E7FA5C1C8AF3C200AAEA57 /* ObjectExtension.swift in Sources */,
 				92E7FA611C8AF52400AAEA57 /* DataModelController.swift in Sources */,
 				92E7FAAF1C8AFED900AAEA57 /* THStyleButton.swift in Sources */,
+				92E7FB111C8B0FEC00AAEA57 /* TabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
