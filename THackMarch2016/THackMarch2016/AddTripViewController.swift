@@ -44,19 +44,22 @@ class AddTripViewController: UIViewController {
 extension AddTripViewController: UITextFieldDelegate {
   func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
     if textField == dateTextField {
-      (textField as! HoshiTextField).animateViewsForTextDisplay()
-      
-      DatePickerDialog().show("Pick a date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: self.selectedDate ?? NSDate(), datePickerMode: UIDatePickerMode.Date) { (date) -> Void in
+      if !textField.isAskingCanBecomeFirstResponder {
+        (textField as! HoshiTextField).animateViewsForTextDisplay()
         
-        let dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "YYYY-MM-dd"
-        
-        if let date = date {
-          self.selectedDate = date
-          textField.text = dateFormat.stringFromDate(date)
+        DatePickerDialog().show("Pick a date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: self.selectedDate ?? NSDate(), datePickerMode: UIDatePickerMode.Date) { (date) -> Void in
+          
+          let dateFormat = NSDateFormatter()
+          dateFormat.dateFormat = "YYYY-MM-dd"
+          
+          if let date = date {
+            self.selectedDate = date
+            textField.text = dateFormat.stringFromDate(date)
+          }
         }
+        return false
       }
-      return false
+      return true
     }
     return true
   }
