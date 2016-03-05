@@ -70,6 +70,13 @@
 		92E7FB221C8B289000AAEA57 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */; };
 		92E7FB241C8B329B00AAEA57 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB231C8B329B00AAEA57 /* DatePickerDialog.swift */; };
 		92E7FB261C8B385000AAEA57 /* AddTripResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB251C8B385000AAEA57 /* AddTripResultsTableViewController.swift */; };
+		92E7FB281C8B48F100AAEA57 /* THUnderlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB271C8B48F100AAEA57 /* THUnderlineButton.swift */; };
+		92E7FB2F1C8B4ED800AAEA57 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FB291C8B4ED800AAEA57 /* FacebookSDKStrings.bundle */; };
+		92E7FB301C8B4ED800AAEA57 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7FB2A1C8B4ED800AAEA57 /* FBAudienceNetwork.framework */; };
+		92E7FB311C8B4ED800AAEA57 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7FB2B1C8B4ED800AAEA57 /* FBSDKCoreKit.framework */; };
+		92E7FB321C8B4ED800AAEA57 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7FB2C1C8B4ED800AAEA57 /* FBSDKLoginKit.framework */; };
+		92E7FB331C8B4ED800AAEA57 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7FB2D1C8B4ED800AAEA57 /* FBSDKMessengerShareKit.framework */; };
+		92E7FB341C8B4ED800AAEA57 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E7FB2E1C8B4ED800AAEA57 /* FBSDKShareKit.framework */; };
 		C5FE9618152BE27B9F21130B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F465A4FA21830BB714761C66 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +161,13 @@
 		92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		92E7FB231C8B329B00AAEA57 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		92E7FB251C8B385000AAEA57 /* AddTripResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripResultsTableViewController.swift; sourceTree = "<group>"; };
+		92E7FB271C8B48F100AAEA57 /* THUnderlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THUnderlineButton.swift; sourceTree = "<group>"; };
+		92E7FB291C8B4ED800AAEA57 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		92E7FB2A1C8B4ED800AAEA57 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		92E7FB2B1C8B4ED800AAEA57 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		92E7FB2C1C8B4ED800AAEA57 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		92E7FB2D1C8B4ED800AAEA57 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		92E7FB2E1C8B4ED800AAEA57 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E91BC5E9A83E4377A5CF1BFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F465A4FA21830BB714761C66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,9 +180,14 @@
 				92E7FA861C8AF62400AAEA57 /* Accounts.framework in Frameworks */,
 				92E7FA841C8AF60D00AAEA57 /* Social.framework in Frameworks */,
 				92E7FA821C8AF5ED00AAEA57 /* libsqlite3.tbd in Frameworks */,
+				92E7FB301C8B4ED800AAEA57 /* FBAudienceNetwork.framework in Frameworks */,
+				92E7FB311C8B4ED800AAEA57 /* FBSDKCoreKit.framework in Frameworks */,
 				92E7FA801C8AF5E400AAEA57 /* libz.tbd in Frameworks */,
+				92E7FB331C8B4ED800AAEA57 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				92E7FA7E1C8AF5DA00AAEA57 /* SystemConfiguration.framework in Frameworks */,
+				92E7FB341C8B4ED800AAEA57 /* FBSDKShareKit.framework in Frameworks */,
 				92E7FA7C1C8AF5CF00AAEA57 /* StoreKit.framework in Frameworks */,
+				92E7FB321C8B4ED800AAEA57 /* FBSDKLoginKit.framework in Frameworks */,
 				92E7FA7A1C8AF5C900AAEA57 /* Security.framework in Frameworks */,
 				92E7FA781C8AF59F00AAEA57 /* QuartzCore.framework in Frameworks */,
 				92E7FA761C8AF58D00AAEA57 /* CoreLocation.framework in Frameworks */,
@@ -315,6 +334,7 @@
 				92E7FAFE1C8B0EA100AAEA57 /* AZTabBarController.swift */,
 				92E7FAAE1C8AFED900AAEA57 /* THStyleButton.swift */,
 				92E7FB1B1C8B21CA00AAEA57 /* THCircleVIew.swift */,
+				92E7FB271C8B48F100AAEA57 /* THUnderlineButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -477,6 +497,12 @@
 		EB1AA26022F9DF1F0C9FF26E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FB291C8B4ED800AAEA57 /* FacebookSDKStrings.bundle */,
+				92E7FB2A1C8B4ED800AAEA57 /* FBAudienceNetwork.framework */,
+				92E7FB2B1C8B4ED800AAEA57 /* FBSDKCoreKit.framework */,
+				92E7FB2C1C8B4ED800AAEA57 /* FBSDKLoginKit.framework */,
+				92E7FB2D1C8B4ED800AAEA57 /* FBSDKMessengerShareKit.framework */,
+				92E7FB2E1C8B4ED800AAEA57 /* FBSDKShareKit.framework */,
 				92E7FA851C8AF62400AAEA57 /* Accounts.framework */,
 				92E7FA831C8AF60D00AAEA57 /* Social.framework */,
 				92E7FA811C8AF5ED00AAEA57 /* libsqlite3.tbd */,
@@ -572,6 +598,7 @@
 				92E7FAA11C8AF74A00AAEA57 /* Oswald-Light.ttf in Resources */,
 				92E7FAA51C8AF74A00AAEA57 /* Oswald-Regular.ttf in Resources */,
 				92E7FA9F1C8AF74A00AAEA57 /* Oswald-Heavy.ttf in Resources */,
+				92E7FB2F1C8B4ED800AAEA57 /* FacebookSDKStrings.bundle in Resources */,
 				92E7FAA61C8AF74A00AAEA57 /* Oswald-RegularItalic.ttf in Resources */,
 				92E7FA4A1C8AEF1F00AAEA57 /* Assets.xcassets in Resources */,
 				92E7FA9C1C8AF74A00AAEA57 /* Oswald-DemiBold.ttf in Resources */,
@@ -646,6 +673,7 @@
 				92E7FB221C8B289000AAEA57 /* AddTripViewController.swift in Sources */,
 				92E7FA621C8AF52400AAEA57 /* DataModelMigration.swift in Sources */,
 				92E7FB261C8B385000AAEA57 /* AddTripResultsTableViewController.swift in Sources */,
+				92E7FB281C8B48F100AAEA57 /* THUnderlineButton.swift in Sources */,
 				92E7FB071C8B0F5E00AAEA57 /* ProfileViewController.swift in Sources */,
 				92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				92E7FAFC1C8B046B00AAEA57 /* NSArray+PureLayout.m in Sources */,

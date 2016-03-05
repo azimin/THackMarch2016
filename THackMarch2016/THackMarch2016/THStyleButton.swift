@@ -9,6 +9,8 @@
 import UIKit
 
 class THStyleButton: UIButton {
+  @IBInspectable var isCornerRounded: Bool = false
+  
   var titleColor: UIColor = UIColor.whiteColor() {
     didSet {
       setNeedsLayout()
@@ -40,6 +42,10 @@ class THStyleButton: UIButton {
   override func layoutSubviews() {
     super.layoutSubviews()
     updateAppearance()
+    
+    if isCornerRounded {
+      self.layer.cornerRadius = self.frame.height / 2
+    }
   }
   
   private func updateAppearance() {

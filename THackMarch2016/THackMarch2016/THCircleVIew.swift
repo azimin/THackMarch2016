@@ -10,6 +10,8 @@ import UIKit
 
 class THCircleVIew: UIView {
   
+  @IBInspectable var circleColor: UIColor = UIColor.whiteColor()
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     setup()
@@ -23,7 +25,7 @@ class THCircleVIew: UIView {
   func setup() {
     self.layer.cornerRadius = self.frame.height / 2
     self.layer.borderWidth = 2
-    self.layer.borderColor = UIColor.whiteColor().CGColor
+    self.layer.borderColor = circleColor.CGColor
     self.backgroundColor = UIColor.clearColor()
   }
   
