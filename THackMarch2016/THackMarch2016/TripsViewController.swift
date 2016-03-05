@@ -15,9 +15,21 @@ class TripsViewController: UIViewController {
   
   var allTrips = TripEntity.allTrips
   
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    (self.tabBarController as? AZTabBarController)?.setHidden(false, animated: true)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "TRIPS"
+    
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateData"), name: "UpdateTrips", object: nil)
+  }
+  
+  func updateData() {
+    allTrips = TripEntity.allTrips
+    tableView.reloadData()
   }
   
   override func az_tabBarItemContentView() -> AZTabBarItemView {
@@ -26,20 +38,63 @@ class TripsViewController: UIViewController {
     return cell
   }
   
+  @IBAction func addTripButtonAction(sender: UIBarButtonItem) {
+    (self.tabBarController as? AZTabBarController)?.setHidden(true, animated: true)
+    self.performSegueWithIdentifier("AddTrip", sender: nil)
+  }
+  
 }
 
 extension TripsViewController: UITableViewDataSource {
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  
+  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let view = UIView()
+    let headerCell = TripsHeaderView.createCell()
+    
+    let dateFormat = NSDateFormatter()
+    dateFormat.dateFormat = "dd MMM"
+    headerCell.titleLabel.text = dateFormat.stringFromDate(allTrips[section].date)
+    
+    view.addSubview(headerCell)
+    headerCell.autoPinEdgesToSuperviewEdges()
+    return view
+  }
+  
+  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 40
+  }
+  
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return allTrips.count
   }
   
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TripTableViewCell
+    
+    let trip = allTrips[indexPath.section]
+    cell.time = trip.time
+    cell.routeLabel.text = HelperMethods.makeArrowFrom(trip.fromCity, toPointB: trip.toCity)
+    
+    if indexPath.section == allTrips.count - 1 {
+      cell.addSeperator()
+    }
+    
+    return cell
   }
 }
 
 extension TripsViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 120
+    return 80 + 32
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    (self.tabBarController as? AZTabBarController)?.setHidden(true, animated: true)
+    self.performSegueWithIdentifier("ShowTrip", sender: nil)
   }
 }
