@@ -55,7 +55,7 @@ class AddTripResultsTableViewController: UITableViewController {
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let tripEntity = TripEntity()
     let flight = flights[indexPath.row]
-    tripEntity.flightNumber = flight.flightNumber
+    tripEntity.flightNumber = flight.formattedNumber ?? ""
     tripEntity.fromCity = departure ?? ""
     tripEntity.toCity = destination ?? ""
     tripEntity.time = flight.duration
@@ -72,7 +72,7 @@ class AddTripResultsTableViewController: UITableViewController {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FlightSearchResultTableViewCell
     let flight = flights[indexPath.row]
-    cell.flightNameLabel.text = "#\(flight.flightNumber)"
+    cell.flightNameLabel.text = flight.formattedNumber != nil ? "#\(flight.formattedNumber!)" : ""
     cell.flightTimeLabel.text = "\(flight.duration) min"
     cell.flightDestinationLabel.text = HelperMethods.makeArrowFrom(departure ?? "", toPointB: destination ?? "")
     return cell

@@ -19,6 +19,8 @@ class Flight {
   var arrivalTime: String
   var flightNumber: String
   var duration: Int
+  var carrier: String
+  var formattedNumber: String?
   
   init(data: JSON) {
     origin = data["OriginStation"].stringValue
@@ -27,6 +29,7 @@ class Flight {
     departureTime = data["DepartureDateTime"].stringValue
     duration = data["Duration"].intValue
     flightNumber = data["FlightNumber"].stringValue
+    carrier = data["Carrier"].stringValue
   }
 }
 
@@ -115,7 +118,7 @@ class SkyScannerAuth {
       completion?([])
       return
     }
-    pollingUrl += "?apiKey=\(skyscannerApiKey)"
+    pollingUrl += "?apiKey=\(skyscannerApiKey)" + "&stops=0"
     Alamofire.request(.GET, pollingUrl).responseJSON { (response) -> Void in
       switch response.result {
       case .Failure(let error):
@@ -124,9 +127,18 @@ class SkyScannerAuth {
         break
       case .Success(let data):
         var flights = [Flight]()
-        let segments = JSON(data).dictionaryValue["Segments"]?.arrayValue ?? []
+        let json = JSON(data)
+        let segments = json.dictionaryValue["Segments"]?.arrayValue ?? []
+        let carriers = json.dictionaryValue["Carriers"]?.arrayValue ?? []
         for segment in segments {
-          flights.append(Flight(data: segment))
+          print(segment)
+          let flight = Flight(data: segment)
+          for carrier in carriers {
+            if carrier.dictionaryValue["Id"]?.stringValue == flight.carrier {
+              flight.formattedNumber = (carrier.dictionaryValue["Code"]?.stringValue ?? "") + flight.flightNumber
+            }
+          }
+          flights.append(flight)
         }
         completion?(flights)
         break
