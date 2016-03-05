@@ -8,6 +8,12 @@
 
 import UIKit
 
+class HelperMethods {
+  static func makeArrowFrom(pointA: String, toPointB pointB: String) -> String {
+    return "\(pointA) ➠ \(pointB)"
+  }
+}
+
 class AddTripResultsTableViewController: UITableViewController {
   
   var departure: String?
@@ -47,14 +53,15 @@ class AddTripResultsTableViewController: UITableViewController {
   // MARK: - Table view data source
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return flights.count
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
-    // Configure the cell...
-    
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FlightSearchResultTableViewCell
+    let flight = flights[indexPath.row]
+    cell.flightNameLabel.text = "#\(flight.flightNumber)"
+    cell.flightTimeLabel.text = "\(flight.duration) min"
+    cell.flightDestinationLabel.text = HelperMethods.makeArrowFrom(departure ?? "", toPointB: destination ?? "")
     return cell
   }
   

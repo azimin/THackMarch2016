@@ -397,7 +397,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="iBw-1k-Ym9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="iBw-1k-Ym9" customClass="FlightSearchResultTableViewCell" customModule="THackMarch2016" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iBw-1k-Ym9" id="hff-JT-Wz4">
@@ -460,6 +460,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="flightDestinationLabel" destination="Kc1-ck-Fkx" id="Tv9-Ax-WeQ"/>
+                                    <outlet property="flightNameLabel" destination="tcw-2b-oH8" id="fAo-eC-tWv"/>
+                                    <outlet property="flightTimeLabel" destination="Wks-ah-WcI" id="NCg-e3-HnB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

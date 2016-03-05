@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		82DA85E41C8AFC1000ADB899 /* FlightsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA85E31C8AFC1000ADB899 /* FlightsParser.swift */; };
 		82DA85E61C8B020000ADB899 /* TrainsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA85E51C8B020000ADB899 /* TrainsParser.swift */; };
+		82DA85E91C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA85E71C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift */; };
 		92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */; };
 		92E7FA451C8AEF1F00AAEA57 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */; };
 		92E7FA481C8AEF1F00AAEA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA461C8AEF1F00AAEA57 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		32F2547C821ACCF2A219DDA6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		82DA85E31C8AFC1000ADB899 /* FlightsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsParser.swift; sourceTree = "<group>"; };
 		82DA85E51C8B020000ADB899 /* TrainsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainsParser.swift; sourceTree = "<group>"; };
+		82DA85E71C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		92E7FA3F1C8AEF1F00AAEA57 /* THackMarch2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THackMarch2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				92E7FA461C8AEF1F00AAEA57 /* Main.storyboard */,
+				82DA85E71C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift */,
 				92E7FA541C8AF34200AAEA57 /* Sources */,
 				92E7FA551C8AF34700AAEA57 /* Resources */,
 			);
@@ -663,6 +666,7 @@
 				92E7FB1C1C8B21CA00AAEA57 /* THCircleVIew.swift in Sources */,
 				92E7FA611C8AF52400AAEA57 /* DataModelController.swift in Sources */,
 				92E7FAAF1C8AFED900AAEA57 /* THStyleButton.swift in Sources */,
+				82DA85E91C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift in Sources */,
 				92E7FB111C8B0FEC00AAEA57 /* TabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
