@@ -52,6 +52,19 @@ class AddTripResultsTableViewController: UITableViewController {
   
   // MARK: - Table view data source
   
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let tripEntity = TripEntity()
+    let flight = flights[indexPath.row]
+    tripEntity.flightNumber = flight.flightNumber
+    tripEntity.fromCity = departure ?? ""
+    tripEntity.toCity = destination ?? ""
+    tripEntity.time = flight.duration
+    tripEntity.date = date ?? ""
+    realmDataBase.writeFunction({ () -> Void in
+      realmDataBase.add(tripEntity)
+    })
+  }
+  
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return flights.count
   }
