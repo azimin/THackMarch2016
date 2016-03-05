@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
+    FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    
     UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), forBarMetrics: .Default)
     
+    Parse.setApplicationId("NsKIGE3Ff986ZBD4Uu2243PIyFzK08lY3fu9BGDx", clientKey: "TtQfUhtxPBiHYVl7piVn3JZWdfXVMbyq4MHu3T52")
+    
+    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    window?.makeKeyAndVisible()
+    
+    presentNesessaryWindow()
+    
     return true
+  }
+  
+  func presentNesessaryWindow() {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    if FBSDKAccessToken.currentAccessToken() != nil {
+      window?.rootViewController = storyboard.instantiateInitialViewController()
+    } else {
+      window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+    }
   }
   
   func applicationWillResignActive(application: UIApplication) {
@@ -37,12 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func applicationDidBecomeActive(application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    FBSDKAppEvents.activateApp()
   }
   
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
   
-  
+  func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+    let fbFalg = FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    return fbFalg
+  }
 }
 

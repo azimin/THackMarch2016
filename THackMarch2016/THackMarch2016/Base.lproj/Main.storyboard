@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zzk-aw-HK9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zzk-aw-HK9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="THackMarch2016" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="THackMarch2016" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,13 +34,16 @@
                                     <constraint firstAttribute="height" constant="30" id="p04-Nj-Vpo"/>
                                 </constraints>
                                 <state key="normal" title="LOGIN WITH FACEBOOK">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.45098039220000002" green="0.67843137249999996" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="p04-Nj-Vpo"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="loginWithFacebookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Bn-k2-6Mt"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo_bag" translatesAutoresizingMaskIntoConstraints="NO" id="7zl-dn-Kxz" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="245" y="174" width="109" height="124"/>
@@ -55,7 +58,7 @@
                                     <constraint firstAttribute="width" constant="10" id="rsI-pU-sWY"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-5b-eBd" customClass="THStyleButton" customModule="THackMarch2016" customModuleProvider="target">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-5b-eBd" customClass="THStyleButton" customModule="THackMarch2016" customModuleProvider="target">
                                 <rect key="frame" x="20" y="480" width="560" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Gkm-yI-V4v"/>
@@ -158,7 +161,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_trip-icon_plane" translatesAutoresizingMaskIntoConstraints="NO" id="uem-0P-nQB">
-                                                                    <rect key="frame" x="441" y="4" width="23" height="14"/>
+                                                                    <rect key="frame" x="441" y="3" width="23" height="14"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </stackView>

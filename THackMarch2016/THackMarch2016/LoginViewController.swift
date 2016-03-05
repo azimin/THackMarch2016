@@ -9,6 +9,8 @@
 import UIKit
 import SVProgressHUD
 import Spring
+import SwiftyJSON
+import Parse
 
 class LoginViewController: UIViewController {
 
@@ -29,4 +31,61 @@ class LoginViewController: UIViewController {
     return .LightContent
   }
 
+  @IBAction func loginWithFacebookAction(sender: UIButton) {
+
+    let login = FBSDKLoginManager()
+    login.logInWithReadPermissions(["public_profile", "email", "user_work_history"], fromViewController: self) { (result, error) -> Void in
+      if error != nil { 
+        print("Error")
+      } else if result.isCancelled {
+        print("Cencelled")
+      } else {
+        self.fetchUser()
+      }
+    }
+  }
+  
+  func fetchUser() {
+    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "work,email,name"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+      print(result)
+      let json = JSON(result)
+      
+      let userID = json["id"].stringValue
+      
+      let query = PFQuery(className:"AppUser")
+      query.whereKey("facebookID", equalTo: userID)
+      query.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
+        if object == nil && error?.code ?? 0 == 101 {
+          let gameScore = PFObject(className:"AppUser")
+          gameScore["facebookID"] = json["id"].stringValue
+          gameScore["username"] = json["name"].stringValue
+          gameScore["email"] = json["email"].stringValue
+          
+          let firstWork: JSON = json["work"].arrayValue.first ?? JSON("")
+          let work = firstWork["position"]["name"].stringValue + " at " + firstWork["employer"]["name"].stringValue
+          
+          if work.length > 4 {
+            gameScore["workDescription"] = work
+          }
+          
+          gameScore.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+              print("Succes")
+              (UIApplication.sharedApplication().delegate as! AppDelegate).presentNesessaryWindow()
+            } else {
+              print(error)
+            }
+          }
+        } else if object != nil {
+          (UIApplication.sharedApplication().delegate as! AppDelegate).presentNesessaryWindow()
+        }
+      })
+    })
+  }
+  
+}
+
+class FacebookManager {
+  static let sharedInstance = FBSDKLoginManager()
 }

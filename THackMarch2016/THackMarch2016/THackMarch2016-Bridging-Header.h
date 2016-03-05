@@ -6,3 +6,6 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "PureLayout.h"
 #import "UIView+AZViewFromNib.h"
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
