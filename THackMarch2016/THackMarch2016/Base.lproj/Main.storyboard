@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zzk-aw-HK9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zzk-aw-HK9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -146,24 +146,24 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="96s-nD-nVz">
-                                                    <rect key="frame" x="112" y="29" width="464" height="62.5"/>
+                                                    <rect key="frame" x="112" y="29" width="464" height="63"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qeG-vw-ueD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="464" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="464" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Berlin ➟ Moscow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-MD-CKL">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="441" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="441" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_trip-icon_plane" translatesAutoresizingMaskIntoConstraints="NO" id="uem-0P-nQB">
-                                                                    <rect key="frame" x="441" y="3" width="23" height="14"/>
+                                                                    <rect key="frame" x="441" y="4" width="23" height="14"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0G-Of-gbw" customClass="THStyleButton" customModule="THackMarch2016" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="32.5" width="464" height="30"/>
+                                                            <rect key="frame" x="0.0" y="33" width="464" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="76F-cu-Z1q"/>
                                                             </constraints>
@@ -584,7 +584,7 @@
                                 <color key="onTintColor" red="0.65490196079999996" green="0.86666666670000003" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAVE A TOPIC TO SHARE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGm-KN-CBe">
-                                <rect key="frame" x="355" y="316" width="168" height="23.5"/>
+                                <rect key="frame" x="355" y="316" width="168" height="24"/>
                                 <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -640,10 +640,15 @@
                     <navigationItem key="navigationItem" id="j1F-sR-5x0">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="Hfm-dS-Vju">
                             <connections>
-                                <segue destination="OJi-FF-tHW" kind="show" id="B43-yP-Z0c"/>
+                                <segue destination="OJi-FF-tHW" kind="show" identifier="Show Search Results Segue" id="B43-yP-Z0c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="EmL-Ud-LCX" id="Eda-QM-yJU"/>
+                        <outlet property="departureTextField" destination="xhy-EB-1B8" id="i40-5j-WMc"/>
+                        <outlet property="destinationTextField" destination="J8B-G0-Ujd" id="feh-4K-RDi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ud-th-Ph2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -658,7 +663,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="iBw-1k-Ym9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="iBw-1k-Ym9" customClass="FlightSearchResultTableViewCell" customModule="THackMarch2016" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iBw-1k-Ym9" id="hff-JT-Wz4">
@@ -675,7 +680,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berlin ➟ Moscow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc1-ck-Fkx">
-                                            <rect key="frame" x="16" y="45" width="576" height="20.5"/>
+                                            <rect key="frame" x="16" y="45" width="576" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -721,6 +726,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="flightDestinationLabel" destination="Kc1-ck-Fkx" id="Tv9-Ax-WeQ"/>
+                                    <outlet property="flightNameLabel" destination="tcw-2b-oH8" id="fAo-eC-tWv"/>
+                                    <outlet property="flightTimeLabel" destination="Wks-ah-WcI" id="NCg-e3-HnB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
