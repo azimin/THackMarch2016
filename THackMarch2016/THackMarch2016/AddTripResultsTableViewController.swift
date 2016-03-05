@@ -59,10 +59,22 @@ class AddTripResultsTableViewController: UITableViewController {
     tripEntity.fromCity = departure ?? ""
     tripEntity.toCity = destination ?? ""
     tripEntity.time = flight.duration
-    tripEntity.date = date ?? ""
+    
+    let dateFormat = NSDateFormatter()
+    dateFormat.dateFormat = "YYYY-MM-dd"
+    tripEntity.date = dateFormat.dateFromString(date ?? "1995-05-19")!
+    
     realmDataBase.writeFunction({ () -> Void in
       realmDataBase.add(tripEntity)
     })
+    
+    realmDataBase.writeFunction { () -> Void in
+      ClientModel.sharedInstance.tripsCount += 1
+    }
+    ClientModel.sharedInstance.fetchBack()
+    
+    NSNotificationCenter.defaultCenter().postNotificationName("UpdateTrips", object: nil)
+    self.navigationController?.popToRootViewControllerAnimated(true)
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
