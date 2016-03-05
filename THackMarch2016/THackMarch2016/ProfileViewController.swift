@@ -10,15 +10,43 @@ import UIKit
 
 class ProfileViewController: UITableViewController {
   
+  @IBOutlet weak var photoImageView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var workLabel: UILabel!
+  
+  @IBOutlet weak var tripsCountLabel: UILabel!
+  @IBOutlet weak var talksCountLabel: UILabel!
+  @IBOutlet weak var collaborationsCountLabel: UILabel!
+  
+  @IBOutlet weak var creditsCountButton: THStyleButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "PROFILE"
+    
+    self.nameLabel.text = ClientModel.sharedInstance.name?.uppercaseString ?? ""
+    self.workLabel.text = ClientModel.sharedInstance.workDescription?.uppercaseString ?? "Work undefined"
+    
+    self.tripsCountLabel.text = "\(ClientModel.sharedInstance.tripsCount)"
+    self.talksCountLabel.text = "\(ClientModel.sharedInstance.talksCount)"
+    self.collaborationsCountLabel.text = "\(ClientModel.sharedInstance.collaborationsCount)"
+    
+    photoImageView.layer.masksToBounds = true
+    photoImageView.image = ClientModel.sharedInstance.image
+    
+    creditsCountButton.setTitle("\(ClientModel.sharedInstance.creditsCount) CREDITS", forState: .Normal)
   }
   
   override func az_tabBarItemContentView() -> AZTabBarItemView {
     let cell = TabBarItem().az_loadFromNibIfEmbeddedInDifferentNib()
     cell.type = TabBarItem.TabBarItemType.Profile
     return cell
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
+    photoImageView.layer.cornerRadius = photoImageView.frame.height / 2
   }
   
   /*

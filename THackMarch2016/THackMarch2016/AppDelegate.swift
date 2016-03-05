@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
+    DataModelController.sharedInstance.setup()
+    
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     
     UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), forBarMetrics: .Default)
@@ -28,10 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     presentNesessaryWindow()
     
+//    FBSDKGraphRequest(graphPath: "/\(json["id"].stringValue)/picture", parameters: ["height": 100]).startWithCompletionHandler({ (connection, result, error) -> Void in
+//      print(result)
+//    })
+    
     return true
   }
   
   func presentNesessaryWindow() {
+    ClientModel.sharedInstance.fetchData()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     if FBSDKAccessToken.currentAccessToken() != nil {
       window?.rootViewController = storyboard.instantiateInitialViewController()

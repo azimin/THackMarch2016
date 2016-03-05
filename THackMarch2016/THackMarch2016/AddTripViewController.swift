@@ -29,28 +29,7 @@ class AddTripViewController: UIViewController {
   }
   
   var selectedDate: NSDate?
-  
-  @IBAction func dateEditingBeganAction(sender: HoshiTextField) {
-    
-    dispatchAfter(0.05) { () -> () in
-      
-      sender.resignFirstResponder()
-      sender.animateViewsForTextDisplay()
-      
-      DatePickerDialog().show("Pick a date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: self.selectedDate ?? NSDate(), datePickerMode: UIDatePickerMode.Date) { (date) -> Void in
-        
-        let dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "YYYY-MM-dd"
-        
-        if let date = date {
-          self.selectedDate = date
-          sender.text = dateFormat.stringFromDate(date)
-        }
-      }
-    }
-    
-  }
-  
+
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "Show Search Results Segue" {
       let destVC = segue.destinationViewController as! AddTripResultsTableViewController
@@ -63,6 +42,25 @@ class AddTripViewController: UIViewController {
 }
 
 extension AddTripViewController: UITextFieldDelegate {
+  func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    if textField == dateTextField {
+      (textField as! HoshiTextField).animateViewsForTextDisplay()
+      
+      DatePickerDialog().show("Pick a date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: self.selectedDate ?? NSDate(), datePickerMode: UIDatePickerMode.Date) { (date) -> Void in
+        
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "YYYY-MM-dd"
+        
+        if let date = date {
+          self.selectedDate = date
+          textField.text = dateFormat.stringFromDate(date)
+        }
+      }
+      return false
+    }
+    return true
+  }
+  
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true

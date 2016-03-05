@@ -52,6 +52,11 @@ class LoginViewController: UIViewController {
       
       let userID = json["id"].stringValue
       
+      realmDataBase.writeFunction({ () -> Void in
+        ClientModel.sharedInstance.facebookId = json["id"].stringValue
+      })
+      ClientModel.sharedInstance.loadImage()
+      
       let query = PFQuery(className:"AppUser")
       query.whereKey("facebookID", equalTo: userID)
       query.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
@@ -60,6 +65,10 @@ class LoginViewController: UIViewController {
           gameScore["facebookID"] = json["id"].stringValue
           gameScore["username"] = json["name"].stringValue
           gameScore["email"] = json["email"].stringValue
+          gameScore["tripsCount"] = 0
+          gameScore["talksCount"] = 0
+          gameScore["collaborationsCount"] = 0
+          gameScore["creditsCount"] = 0
           
           let firstWork: JSON = json["work"].arrayValue.first ?? JSON("")
           let work = firstWork["position"]["name"].stringValue + " at " + firstWork["employer"]["name"].stringValue
