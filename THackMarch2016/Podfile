@@ -12,6 +12,7 @@ pod 'SVProgressHUD'
 pod 'JVFloatLabeledTextField'
 pod 'RealmSwift'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+pod 'TextFieldEffects'
 
 #VADIM
 

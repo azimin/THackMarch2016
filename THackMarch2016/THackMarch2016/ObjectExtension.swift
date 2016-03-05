@@ -10,6 +10,12 @@ import Foundation
 import RealmSwift
 import Realm
 
+func dispatchAfter(time: NSTimeInterval, executionBlock: () -> ()) {
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time) * Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+    executionBlock()
+  })
+}
+
 protocol ObjectSingletone: class {
   init()
 }

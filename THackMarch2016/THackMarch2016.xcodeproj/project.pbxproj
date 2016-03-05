@@ -68,6 +68,8 @@
 		92E7FB1C1C8B21CA00AAEA57 /* THCircleVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB1B1C8B21CA00AAEA57 /* THCircleVIew.swift */; };
 		92E7FB1E1C8B24AD00AAEA57 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB1D1C8B24AD00AAEA57 /* TripTableViewCell.swift */; };
 		92E7FB221C8B289000AAEA57 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */; };
+		92E7FB241C8B329B00AAEA57 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB231C8B329B00AAEA57 /* DatePickerDialog.swift */; };
+		92E7FB261C8B385000AAEA57 /* AddTripResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FB251C8B385000AAEA57 /* AddTripResultsTableViewController.swift */; };
 		C5FE9618152BE27B9F21130B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F465A4FA21830BB714761C66 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +152,8 @@
 		92E7FB1B1C8B21CA00AAEA57 /* THCircleVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCircleVIew.swift; sourceTree = "<group>"; };
 		92E7FB1D1C8B24AD00AAEA57 /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		92E7FB231C8B329B00AAEA57 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		92E7FB251C8B385000AAEA57 /* AddTripResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripResultsTableViewController.swift; sourceTree = "<group>"; };
 		E91BC5E9A83E4377A5CF1BFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F465A4FA21830BB714761C66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -268,6 +272,7 @@
 		92E7FA581C8AF3A500AAEA57 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FB231C8B329B00AAEA57 /* DatePickerDialog.swift */,
 				82DA85E31C8AFC1000ADB899 /* FlightsParser.swift */,
 				82DA85E51C8B020000ADB899 /* TrainsParser.swift */,
 				92E7FAF11C8B045800AAEA57 /* PureLayout */,
@@ -464,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				92E7FB211C8B289000AAEA57 /* AddTripViewController.swift */,
+				92E7FB251C8B385000AAEA57 /* AddTripResultsTableViewController.swift */,
 			);
 			name = AddTrip;
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				82DA85E61C8B020000ADB899 /* TrainsParser.swift in Sources */,
 				92E7FB221C8B289000AAEA57 /* AddTripViewController.swift in Sources */,
 				92E7FA621C8AF52400AAEA57 /* DataModelMigration.swift in Sources */,
+				92E7FB261C8B385000AAEA57 /* AddTripResultsTableViewController.swift in Sources */,
 				92E7FB071C8B0F5E00AAEA57 /* ProfileViewController.swift in Sources */,
 				92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				92E7FAFC1C8B046B00AAEA57 /* NSArray+PureLayout.m in Sources */,
@@ -646,6 +653,7 @@
 				92E7FB0C1C8B0FC900AAEA57 /* UIView+AZViewFromNib.m in Sources */,
 				92E7FB091C8B0F6400AAEA57 /* SettingsViewController.swift in Sources */,
 				92E7FAFF1C8B0EA100AAEA57 /* AZTabBarController.swift in Sources */,
+				92E7FB241C8B329B00AAEA57 /* DatePickerDialog.swift in Sources */,
 				92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */,
 				92E7FB151C8B148300AAEA57 /* NavigationViewController.swift in Sources */,
 				92E7FB1E1C8B24AD00AAEA57 /* TripTableViewCell.swift in Sources */,

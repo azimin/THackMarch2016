@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class AddTripViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-  
+    
+    self.title = "ADD TRIP"
     // Do any additional setup after loading the view.
   }
   
@@ -21,6 +23,28 @@ class AddTripViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  var selectedDate: NSDate?
+  
+  @IBAction func dateEditingBeganAction(sender: HoshiTextField) {
+    
+    dispatchAfter(0.05) { () -> () in
+      
+      sender.resignFirstResponder()
+      sender.animateViewsForTextDisplay()
+      
+      DatePickerDialog().show("Pick a date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: self.selectedDate ?? NSDate(), datePickerMode: UIDatePickerMode.Date) { (date) -> Void in
+        
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "YYYY-MM-dd"
+        
+        if let date = date {
+          self.selectedDate = date
+          sender.text = dateFormat.stringFromDate(date)
+        }
+      }
+    }
+    
+  }
   
   /*
   // MARK: - Navigation
@@ -32,4 +56,11 @@ class AddTripViewController: UIViewController {
   }
   */
   
+}
+
+extension AddTripViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
 }
