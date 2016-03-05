@@ -350,13 +350,13 @@
                                                     <rect key="frame" x="8" y="11" width="584" height="128"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l19-68-DAe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="195" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="194.5" height="128"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2m-yb-l90" customClass="THCircleVIew" customModule="THackMarch2016" customModuleProvider="target">
                                                                     <rect key="frame" x="57" y="8" width="80" height="80"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0m-HH-3ih">
-                                                                            <rect key="frame" x="12" y="21.5" width="56" height="36"/>
+                                                                            <rect key="frame" x="12" y="22" width="56" height="36"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                             <color key="textColor" red="0.94509803920000002" green="0.12941176469999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -399,13 +399,13 @@
                                                             </variation>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-mv-Ea8">
-                                                            <rect key="frame" x="195" y="0.0" width="195" height="128"/>
+                                                            <rect key="frame" x="194.5" y="0.0" width="195" height="128"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4i-vw-eJL" customClass="THCircleVIew" customModule="THackMarch2016" customModuleProvider="target">
-                                                                    <rect key="frame" x="57.5" y="8" width="80" height="80"/>
+                                                                    <rect key="frame" x="57" y="8" width="80" height="80"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uZ-dV-zGk">
-                                                                            <rect key="frame" x="12" y="21.5" width="56" height="36"/>
+                                                                            <rect key="frame" x="12" y="22" width="56" height="36"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                             <color key="textColor" red="0.94509803920000002" green="0.12941176469999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -426,8 +426,8 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TALKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-Ui-LbY">
-                                                                    <rect key="frame" x="74" y="96" width="34" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TALKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-Ui-LbY">
+                                                                    <rect key="frame" x="81" y="96" width="33.5" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="14"/>
                                                                     <color key="textColor" red="0.94509803920000002" green="0.12941176469999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -448,13 +448,13 @@
                                                             </variation>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gS3-vU-s2q">
-                                                            <rect key="frame" x="390" y="0.0" width="195" height="128"/>
+                                                            <rect key="frame" x="389.5" y="0.0" width="194.5" height="128"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05u-xO-KG4" customClass="THCircleVIew" customModule="THackMarch2016" customModuleProvider="target">
-                                                                    <rect key="frame" x="57" y="8" width="80" height="80"/>
+                                                                    <rect key="frame" x="56.5" y="8" width="80" height="80"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-vg-C38">
-                                                                            <rect key="frame" x="12" y="21.5" width="56" height="36"/>
+                                                                            <rect key="frame" x="12" y="22" width="56" height="36"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                             <color key="textColor" red="0.94509803920000002" green="0.12941176469999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -475,8 +475,8 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PART" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-MJ-BWd">
-                                                                    <rect key="frame" x="76" y="96" width="32" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PART" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-MJ-BWd">
+                                                                    <rect key="frame" x="83" y="96" width="28" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="14"/>
                                                                     <color key="textColor" red="0.94509803920000002" green="0.12941176469999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
