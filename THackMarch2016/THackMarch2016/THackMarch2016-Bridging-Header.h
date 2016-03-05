@@ -7,3 +7,4 @@
 #import <ChameleonFramework/Chameleon.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "PureLayout.h"
+#import "UIView+AZViewFromNib.h"
