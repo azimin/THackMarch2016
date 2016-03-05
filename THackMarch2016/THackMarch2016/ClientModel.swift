@@ -18,7 +18,7 @@ class ClientModel: Object, ObjectSingletone {
   
   dynamic var facebookId: String = ""
   dynamic var name: String?
-  dynamic var workDescription: String?
+  dynamic var gender: String?
   dynamic var email: String?
   dynamic var talksCount = 0
   dynamic var tripsCount = 0
@@ -49,7 +49,7 @@ class ClientModel: Object, ObjectSingletone {
       realmDataBase.writeFunction({ () -> Void in
         self.name = object["username"] as? String
         self.email = object["email"] as? String
-        self.workDescription = object["workDescription"] as? String
+        self.gender = object["gender"] as? String
         self.talksCount = object["talksCount"] as? Int ?? 0
         self.tripsCount = object["tripsCount"] as? Int ?? 0
         self.collaborationsCount = object["collaborationsCount"] as? Int ?? 0

@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
   }
   
   func fetchUser() {
-    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "work,email,name"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "work,email,name,gender,about"]).startWithCompletionHandler({ (connection, result, error) -> Void in
       print(result)
       let json = JSON(result)
       
@@ -69,13 +69,7 @@ class LoginViewController: UIViewController {
           gameScore["talksCount"] = 0
           gameScore["collaborationsCount"] = 0
           gameScore["creditsCount"] = 0
-          
-          let firstWork: JSON = json["work"].arrayValue.first ?? JSON("")
-          let work = firstWork["position"]["name"].stringValue + " at " + firstWork["employer"]["name"].stringValue
-          
-          if work.length > 4 {
-            gameScore["workDescription"] = work
-          }
+          gameScore["gender"] = json["gender"].string
           
           gameScore.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -91,6 +85,7 @@ class LoginViewController: UIViewController {
         }
       })
     })
+    
   }
   
 }

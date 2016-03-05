@@ -25,7 +25,7 @@ class ProfileViewController: UITableViewController {
     self.title = "PROFILE"
     
     self.nameLabel.text = ClientModel.sharedInstance.name?.uppercaseString ?? ""
-    self.workLabel.text = ClientModel.sharedInstance.workDescription?.uppercaseString ?? "Work undefined"
+    self.workLabel.text = ClientModel.sharedInstance.gender?.uppercaseString ?? "Gender undefined".uppercaseString
     
     self.tripsCountLabel.text = "\(ClientModel.sharedInstance.tripsCount)"
     self.talksCountLabel.text = "\(ClientModel.sharedInstance.talksCount)"
