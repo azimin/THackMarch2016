@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */; };
-		92E7FA451C8AEF1F00AAEA57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA441C8AEF1F00AAEA57 /* ViewController.swift */; };
+		92E7FA451C8AEF1F00AAEA57 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */; };
 		92E7FA481C8AEF1F00AAEA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA461C8AEF1F00AAEA57 /* Main.storyboard */; };
 		92E7FA4A1C8AEF1F00AAEA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA491C8AEF1F00AAEA57 /* Assets.xcassets */; };
 		92E7FA4D1C8AEF1F00AAEA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA4B1C8AEF1F00AAEA57 /* LaunchScreen.storyboard */; };
@@ -49,6 +49,11 @@
 		92E7FAA51C8AF74A00AAEA57 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA961C8AF74A00AAEA57 /* Oswald-Regular.ttf */; };
 		92E7FAA61C8AF74A00AAEA57 /* Oswald-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA971C8AF74A00AAEA57 /* Oswald-RegularItalic.ttf */; };
 		92E7FAA71C8AF74A00AAEA57 /* Oswald-Stencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA981C8AF74A00AAEA57 /* Oswald-Stencil.ttf */; };
+		92E7FAA91C8AFC4400AAEA57 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAA81C8AFC4400AAEA57 /* UIColorExtension.swift */; };
+		92E7FAAF1C8AFED900AAEA57 /* THStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAAE1C8AFED900AAEA57 /* THStyleButton.swift */; };
+		92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAF31C8B046B00AAEA57 /* ALView+PureLayout.m */; };
+		92E7FAFC1C8B046B00AAEA57 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAF51C8B046B00AAEA57 /* NSArray+PureLayout.m */; };
+		92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FAF71C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m */; };
 		C5FE9618152BE27B9F21130B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F465A4FA21830BB714761C66 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +61,7 @@
 		32F2547C821ACCF2A219DDA6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		92E7FA3F1C8AEF1F00AAEA57 /* THackMarch2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THackMarch2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92E7FA441C8AEF1F00AAEA57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92E7FA471C8AEF1F00AAEA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92E7FA491C8AEF1F00AAEA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92E7FA4C1C8AEF1F00AAEA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +103,24 @@
 		92E7FA961C8AF74A00AAEA57 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		92E7FA971C8AF74A00AAEA57 /* Oswald-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-RegularItalic.ttf"; sourceTree = "<group>"; };
 		92E7FA981C8AF74A00AAEA57 /* Oswald-Stencil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Stencil.ttf"; sourceTree = "<group>"; };
+		92E7FAA81C8AFC4400AAEA57 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		92E7FAAA1C8AFC9800AAEA57 /* THackMarch2016-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "THackMarch2016-Bridging-Header.h"; sourceTree = "<group>"; };
+		92E7FAAE1C8AFED900AAEA57 /* THStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THStyleButton.swift; sourceTree = "<group>"; };
+		92E7FAB61C8B037C00AAEA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		92E7FAB81C8B037C00AAEA57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92E7FABB1C8B037C00AAEA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92E7FABD1C8B037C00AAEA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92E7FAC01C8B037C00AAEA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92E7FAC21C8B037C00AAEA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E7FAF21C8B046B00AAEA57 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		92E7FAF31C8B046B00AAEA57 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		92E7FAF41C8B046B00AAEA57 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		92E7FAF51C8B046B00AAEA57 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		92E7FAF61C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		92E7FAF71C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		92E7FAF81C8B046B00AAEA57 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		92E7FAF91C8B046B00AAEA57 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		92E7FAFA1C8B046B00AAEA57 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		E91BC5E9A83E4377A5CF1BFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F465A4FA21830BB714761C66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				92E7FA411C8AEF1F00AAEA57 /* THackMarch2016 */,
+				92E7FAB51C8B037C00AAEA57 /* Test */,
 				92E7FA401C8AEF1F00AAEA57 /* Products */,
 				EB1AA26022F9DF1F0C9FF26E /* Frameworks */,
 				63666AA10668B51D43101664 /* Pods */,
@@ -185,6 +209,7 @@
 		92E7FA551C8AF34700AAEA57 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FAAA1C8AFC9800AAEA57 /* THackMarch2016-Bridging-Header.h */,
 				92E7FA891C8AF72F00AAEA57 /* Fonts */,
 				92E7FA491C8AEF1F00AAEA57 /* Assets.xcassets */,
 				92E7FA4B1C8AEF1F00AAEA57 /* LaunchScreen.storyboard */,
@@ -196,7 +221,7 @@
 		92E7FA561C8AF34D00AAEA57 /* ViewControllers+Cells */ = {
 			isa = PBXGroup;
 			children = (
-				92E7FA441C8AEF1F00AAEA57 /* ViewController.swift */,
+				92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */,
 			);
 			name = "ViewControllers+Cells";
 			sourceTree = "<group>";
@@ -213,6 +238,7 @@
 		92E7FA581C8AF3A500AAEA57 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FAF11C8B045800AAEA57 /* PureLayout */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -222,6 +248,7 @@
 			children = (
 				92E7FA5A1C8AF3C200AAEA57 /* ObjectExtension.swift */,
 				92E7FA5B1C8AF3C200AAEA57 /* RealmExtension.swift */,
+				92E7FAA81C8AFC4400AAEA57 /* UIColorExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +272,7 @@
 		92E7FA881C8AF6F300AAEA57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92E7FAAE1C8AFED900AAEA57 /* THStyleButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -269,6 +297,35 @@
 				92E7FA981C8AF74A00AAEA57 /* Oswald-Stencil.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		92E7FAB51C8B037C00AAEA57 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FAB61C8B037C00AAEA57 /* AppDelegate.swift */,
+				92E7FAB81C8B037C00AAEA57 /* ViewController.swift */,
+				92E7FABA1C8B037C00AAEA57 /* Main.storyboard */,
+				92E7FABD1C8B037C00AAEA57 /* Assets.xcassets */,
+				92E7FABF1C8B037C00AAEA57 /* LaunchScreen.storyboard */,
+				92E7FAC21C8B037C00AAEA57 /* Info.plist */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		92E7FAF11C8B045800AAEA57 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				92E7FAF21C8B046B00AAEA57 /* ALView+PureLayout.h */,
+				92E7FAF31C8B046B00AAEA57 /* ALView+PureLayout.m */,
+				92E7FAF41C8B046B00AAEA57 /* NSArray+PureLayout.h */,
+				92E7FAF51C8B046B00AAEA57 /* NSArray+PureLayout.m */,
+				92E7FAF61C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.h */,
+				92E7FAF71C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m */,
+				92E7FAF81C8B046B00AAEA57 /* PureLayout.h */,
+				92E7FAF91C8B046B00AAEA57 /* PureLayout+Internal.h */,
+				92E7FAFA1C8B046B00AAEA57 /* PureLayoutDefines.h */,
+			);
+			name = PureLayout;
 			sourceTree = "<group>";
 		};
 		EB1AA26022F9DF1F0C9FF26E /* Frameworks */ = {
@@ -434,12 +491,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E7FA451C8AEF1F00AAEA57 /* ViewController.swift in Sources */,
+				92E7FA451C8AEF1F00AAEA57 /* LoginViewController.swift in Sources */,
+				92E7FAA91C8AFC4400AAEA57 /* UIColorExtension.swift in Sources */,
 				92E7FA5D1C8AF3C200AAEA57 /* RealmExtension.swift in Sources */,
 				92E7FA621C8AF52400AAEA57 /* DataModelMigration.swift in Sources */,
+				92E7FAFD1C8B046B00AAEA57 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				92E7FAFC1C8B046B00AAEA57 /* NSArray+PureLayout.m in Sources */,
+				92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */,
 				92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */,
 				92E7FA5C1C8AF3C200AAEA57 /* ObjectExtension.swift in Sources */,
 				92E7FA611C8AF52400AAEA57 /* DataModelController.swift in Sources */,
+				92E7FAAF1C8AFED900AAEA57 /* THStyleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +520,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				92E7FA4C1C8AEF1F00AAEA57 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		92E7FABA1C8B037C00AAEA57 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92E7FABB1C8B037C00AAEA57 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92E7FABF1C8B037C00AAEA57 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92E7FAC01C8B037C00AAEA57 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -551,6 +629,7 @@
 			baseConfigurationReference = 32F2547C821ACCF2A219DDA6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -586,6 +665,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexAndVadim.THackMarch2016;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "THackMarch2016/THackMarch2016-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -594,6 +675,7 @@
 			baseConfigurationReference = E91BC5E9A83E4377A5CF1BFF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -629,6 +711,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexAndVadim.THackMarch2016;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "THackMarch2016/THackMarch2016-Bridging-Header.h";
 			};
 			name = Release;
 		};

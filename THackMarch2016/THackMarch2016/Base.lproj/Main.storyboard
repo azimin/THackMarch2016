@@ -2,17 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Oswald-Medium.ttf">
-            <string>Oswald-Medium</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="THackMarch2016" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="THackMarch2016" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,22 +17,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-la-V6A">
-                                <rect key="frame" x="282.5" y="288" width="35" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-dM-CZb" customClass="THStyleButton" customModule="THackMarch2016" customModuleProvider="target">
+                                <rect key="frame" x="20" y="554" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="p04-Nj-Vpo"/>
+                                </constraints>
+                                <state key="normal" title="LOGIN WITH FACEBOOK">
+                                    <color key="titleColor" red="0.45098039215686275" green="0.67843137254901964" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="p04-Nj-Vpo"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-5b-eBd" customClass="THStyleButton" customModule="THackMarch2016" customModuleProvider="target">
+                                <rect key="frame" x="20" y="508" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="x1M-CY-Urq"/>
+                                </constraints>
+                                <state key="normal" title="CONTINUE AS A GHOST">
+                                    <color key="titleColor" red="0.94509803921568625" green="0.12941176470588234" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="x1M-CY-Urq"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo_bag" translatesAutoresizingMaskIntoConstraints="NO" id="7zl-dn-Kxz" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="245.5" y="188" width="109" height="124"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo_circle" translatesAutoresizingMaskIntoConstraints="NO" id="Kls-XT-VkS">
+                                <rect key="frame" x="175" y="125" width="250" height="250"/>
+                            </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-5j-LEV">
+                                <rect key="frame" x="295" y="0.0" width="10" height="500"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="rsI-pU-sWY"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0FS-la-V6A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MQd-Gr-wef"/>
-                            <constraint firstItem="0FS-la-V6A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pzG-tV-QMv"/>
+                            <constraint firstItem="2AP-5j-LEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0pK-Gb-7AK"/>
+                            <constraint firstItem="QvY-dM-CZb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="24I-5I-6AT"/>
+                            <constraint firstItem="KvE-5b-eBd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4wr-uu-Tz4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QvY-dM-CZb" secondAttribute="bottom" constant="16" id="6oh-fd-Hft"/>
+                            <constraint firstItem="Kls-XT-VkS" firstAttribute="centerX" secondItem="7zl-dn-Kxz" secondAttribute="centerX" id="7bs-cv-DDx"/>
+                            <constraint firstItem="Kls-XT-VkS" firstAttribute="centerY" secondItem="7zl-dn-Kxz" secondAttribute="centerY" id="9e2-yr-su6"/>
+                            <constraint firstItem="7zl-dn-Kxz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9un-2G-4DN"/>
+                            <constraint firstItem="7zl-dn-Kxz" firstAttribute="centerY" secondItem="2AP-5j-LEV" secondAttribute="centerY" id="E7L-Nk-VEE"/>
+                            <constraint firstItem="QvY-dM-CZb" firstAttribute="top" secondItem="KvE-5b-eBd" secondAttribute="bottom" constant="16" id="GEm-5M-WRa"/>
+                            <constraint firstItem="7zl-dn-Kxz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ruj-Js-NhH"/>
+                            <constraint firstItem="QvY-dM-CZb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Zuz-SV-Kad"/>
+                            <constraint firstItem="KvE-5b-eBd" firstAttribute="top" secondItem="2AP-5j-LEV" secondAttribute="bottom" constant="8" id="hej-ZZ-H9Q"/>
+                            <constraint firstItem="KvE-5b-eBd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kGI-dE-QpU"/>
+                            <constraint firstItem="2AP-5j-LEV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="lQX-FC-R53"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9un-2G-4DN"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="7zl-dn-Kxz" id="kks-SJ-8p0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="324" y="356"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_logo_bag" width="109" height="124"/>
+        <image name="img_logo_circle" width="250" height="250"/>
+    </resources>
 </document>
