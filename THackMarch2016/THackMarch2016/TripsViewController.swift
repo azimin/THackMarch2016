@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TripsViewController: UIViewController {
   
@@ -15,6 +16,22 @@ class TripsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "TRIPS"
+    let carrier = "SU"
+    let flightnumber = "2318"
+    let year = "2016"
+    let month = "03"
+    let day = "07"
+    let url = "https://api.flightstats.com/flex/schedules/rest/v1/json/flight/\(carrier)/\(flightnumber)/departing/\(year)/\(month)/\(day)?appId=b0c11341&appKey=c612607cd5a900de873d3a50d8b3470e"
+    Alamofire.request(.GET, url).responseJSON { (response) -> Void in
+      switch response.result {
+      case .Failure(let error):
+        print(error.localizedDescription)
+        break
+      case .Success(let data):
+        print(data)
+        break
+      }
+    }
   }
   
   
