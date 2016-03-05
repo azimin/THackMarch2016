@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/ChameleonFramework.framework"
+  install_framework "Pods/FrameAccessor.framework"
   install_framework "Pods/JVFloatLabeledTextField.framework"
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
@@ -98,6 +99,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/ChameleonFramework.framework"
+  install_framework "Pods/FrameAccessor.framework"
   install_framework "Pods/JVFloatLabeledTextField.framework"
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
