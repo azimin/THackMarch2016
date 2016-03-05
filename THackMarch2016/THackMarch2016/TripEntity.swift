@@ -24,4 +24,8 @@ class TripEntity: Object {
   dynamic var flightNumber = ""
   dynamic var status = 0
   dynamic var date = NSDate()
+  
+  static var allTrips: Results<TripEntity> {
+    return realmDataBase.objects(TripEntity)
+  }
 }

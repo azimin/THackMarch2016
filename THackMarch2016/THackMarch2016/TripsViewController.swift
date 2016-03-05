@@ -13,11 +13,12 @@ class TripsViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
+  var allTrips = TripEntity.allTrips
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "TRIPS"
   }
-  
   
   override func az_tabBarItemContentView() -> AZTabBarItemView {
     let cell = TabBarItem().az_loadFromNibIfEmbeddedInDifferentNib()
@@ -29,7 +30,7 @@ class TripsViewController: UIViewController {
 
 extension TripsViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return allTrips.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
