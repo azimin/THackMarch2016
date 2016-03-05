@@ -23,5 +23,5 @@ class TripEntity: Object {
   dynamic var time = 0
   dynamic var flightNumber = ""
   dynamic var status = 0
-  dynamic var date = NSDate()
+  dynamic var date = ""
 }
