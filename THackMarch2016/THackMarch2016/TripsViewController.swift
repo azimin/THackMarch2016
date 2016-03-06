@@ -85,6 +85,13 @@ extension TripsViewController: UITableViewDataSource {
     
     return cell
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowTalkEdit" {
+      let viewController = segue.destinationViewController as! CreateTalkTableViewController
+      viewController.trip = sender as! TripEntity
+    }
+  }
 }
 
 extension TripsViewController: UITableViewDelegate {
@@ -95,6 +102,6 @@ extension TripsViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     (self.tabBarController as? AZTabBarController)?.setHidden(true, animated: true)
-    self.performSegueWithIdentifier("ShowTalk", sender: nil)
+    self.performSegueWithIdentifier("ShowTalkEdit", sender: allTrips[indexPath.section])
   }
 }

@@ -777,25 +777,38 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="38" id="kUM-kD-czF">
-                                        <rect key="frame" x="0.0" y="346" width="600" height="38"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="64" id="kUM-kD-czF">
+                                        <rect key="frame" x="0.0" y="346" width="600" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kUM-kD-czF" id="4tx-3g-oFJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 people attend this talk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXY-m3-SyG">
-                                                    <rect key="frame" x="8" y="8" width="551" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEJ-Jg-KD4" customClass="THStyleButton" customModule="THackMarch2016" customModuleProvider="target">
+                                                    <rect key="frame" x="160" y="12" width="280" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="AMA-T2-uNa"/>
+                                                        <constraint firstAttribute="height" constant="40" id="bkZ-2Y-pFJ"/>
+                                                        <constraint firstAttribute="width" constant="200" id="moI-ca-Ofz"/>
+                                                        <constraint firstAttribute="width" constant="280" id="rJa-En-O0B"/>
+                                                    </constraints>
+                                                    <state key="normal" title="3 Collaborators">
+                                                        <color key="titleColor" red="0.65490196079999996" green="0.86666666670000003" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCornerRounded" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="AMA-T2-uNa"/>
+                                                            <exclude reference="moI-ca-Ofz"/>
+                                                        </mask>
+                                                    </variation>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="kXY-m3-SyG" secondAttribute="bottom" id="1w1-F9-V3e"/>
-                                                <constraint firstItem="kXY-m3-SyG" firstAttribute="top" secondItem="4tx-3g-oFJ" secondAttribute="topMargin" id="AAv-lL-lM0"/>
-                                                <constraint firstItem="kXY-m3-SyG" firstAttribute="leading" secondItem="4tx-3g-oFJ" secondAttribute="leadingMargin" id="fC8-3m-pRS"/>
-                                                <constraint firstItem="kXY-m3-SyG" firstAttribute="trailing" secondItem="4tx-3g-oFJ" secondAttribute="trailingMargin" id="hXK-KR-MrR"/>
+                                                <constraint firstItem="yEJ-Jg-KD4" firstAttribute="centerY" secondItem="4tx-3g-oFJ" secondAttribute="centerY" id="4zo-fW-3Yp"/>
+                                                <constraint firstItem="yEJ-Jg-KD4" firstAttribute="centerX" secondItem="4tx-3g-oFJ" secondAttribute="centerX" id="vYA-5p-AVY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -933,12 +946,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jn-VJ-REn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3617" y="269"/>
+            <point key="canvasLocation" x="3823" y="327"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Create Talk Table View Controller-->
         <scene sceneID="xq6-9s-hUG">
             <objects>
-                <tableViewController id="YIf-7i-bz9" sceneMemberID="viewController">
+                <tableViewController id="YIf-7i-bz9" customClass="CreateTalkTableViewController" customModule="THackMarch2016" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nUl-gC-U1j">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -979,7 +992,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <outlet property="delegate" destination="oxj-cR-8tH" id="7JE-pj-7KJ"/>
+                                                        <outlet property="delegate" destination="YIf-7i-bz9" id="Mte-8Q-Tjq"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1030,7 +1043,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <outlet property="delegate" destination="oxj-cR-8tH" id="2dd-no-e3a"/>
+                                                        <outlet property="delegate" destination="YIf-7i-bz9" id="sXO-IC-huC"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1081,7 +1094,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <outlet property="delegate" destination="oxj-cR-8tH" id="87g-Hf-etl"/>
+                                                        <outlet property="delegate" destination="YIf-7i-bz9" id="FQx-WV-VgW"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1108,10 +1121,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2IN-Q1-Vkx">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="loy-Iw-90K"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="loy-Iw-90K">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="YIf-7i-bz9" id="d4u-CH-fSV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="fd0-hR-PeK" kind="show" id="4wZ-6k-peV"/>
+                        <outlet property="costTextField" destination="GU9-Nl-czu" id="ea5-II-1hT"/>
+                        <outlet property="descriptionTextField" destination="zDS-Xk-Ui9" id="uwy-4e-wYQ"/>
+                        <outlet property="titleTextField" destination="ZSz-yf-N2S" id="6Ut-yv-v2g"/>
+                        <segue destination="fd0-hR-PeK" kind="show" identifier="ShowTalk" id="4wZ-6k-peV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFD-6m-0Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>

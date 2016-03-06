@@ -25,7 +25,11 @@ class TripEntity: Object {
   dynamic var status = 0
   dynamic var date = NSDate()
   
-  var uniqID: String {
+  var myTalk: TalkEntity? {
+    return realmDataBase.objects(TalkEntity).filter(NSPredicate(format: "tripUniqId == %@ && authorId == %@", uniqId, ClientModel.sharedInstance.facebookId)).first
+  }
+  
+  var uniqId: String {
     let dateFormat = NSDateFormatter()
     dateFormat.dateFormat = "YYYY-MM-dd"
     return dateFormat.stringFromDate(date) + flightNumber
@@ -50,7 +54,7 @@ class TripEntity: Object {
       object["flightNumber"] = self.flightNumber
       object["status"] = self.status
       object["date"] = self.date
-      object["uniqId"] = self.uniqID
+      object["uniqId"] = self.uniqId
       
       try! object.save()
       
@@ -64,7 +68,7 @@ class TripEntity: Object {
   static func loadAllRelationships(completion: () -> ()) {
     var keys: [String] = []
     for trip in TripEntity.allTrips {
-      keys.append(trip.uniqID)
+      keys.append(trip.uniqId)
     }
     
     ClientModel.sharedInstance.requestCurrentUser { (user) -> () in
@@ -77,7 +81,7 @@ class TripEntity: Object {
       let query = relation.query()
       query.whereKey("uniqId", notContainedIn: keys)
       query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-        print("Finded \(objects?.count ?? 0) objects")
+        print("TRIP: Finded \(objects?.count ?? 0) objects")
         for object in objects ?? [] {
           
           let tripEntity = TripEntity()
@@ -91,6 +95,10 @@ class TripEntity: Object {
           
           realmDataBase.writeFunction({ () -> Void in
             realmDataBase.add(tripEntity)
+          })
+          
+          TalkEntity.loadForCurrentTripObject(object, completion: { () -> () in
+            print("Loaded talk for trip")
           })
           
         }

@@ -15,6 +15,8 @@
 		921714E31C8B691F00355736 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921714E21C8B691F00355736 /* ClientModel.swift */; };
 		92D412821C8B941A00A9078C /* TripsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D412801C8B941A00A9078C /* TripsHeaderView.xib */; };
 		92D412831C8B941A00A9078C /* TripsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D412811C8B941A00A9078C /* TripsHeaderView.swift */; };
+		92D412851C8BB85900A9078C /* TalkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D412841C8BB85900A9078C /* TalkEntity.swift */; };
+		92D412891C8BBC4500A9078C /* CreateTalkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D412881C8BBC4500A9078C /* CreateTalkTableViewController.swift */; };
 		92E7FA431C8AEF1F00AAEA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */; };
 		92E7FA451C8AEF1F00AAEA57 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */; };
 		92E7FA481C8AEF1F00AAEA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E7FA461C8AEF1F00AAEA57 /* Main.storyboard */; };
@@ -95,6 +97,8 @@
 		921714E21C8B691F00355736 /* ClientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		92D412801C8B941A00A9078C /* TripsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripsHeaderView.xib; sourceTree = "<group>"; };
 		92D412811C8B941A00A9078C /* TripsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsHeaderView.swift; sourceTree = "<group>"; };
+		92D412841C8BB85900A9078C /* TalkEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkEntity.swift; sourceTree = "<group>"; };
+		92D412881C8BBC4500A9078C /* CreateTalkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTalkTableViewController.swift; sourceTree = "<group>"; };
 		92E7FA3F1C8AEF1F00AAEA57 /* THackMarch2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THackMarch2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E7FA421C8AEF1F00AAEA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E7FA441C8AEF1F00AAEA57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -224,8 +228,25 @@
 			children = (
 				921714E21C8B691F00355736 /* ClientModel.swift */,
 				920C13961C8B85BC00AE093D /* TripEntity.swift */,
+				92D412841C8BB85900A9078C /* TalkEntity.swift */,
 			);
 			name = Entites;
+			sourceTree = "<group>";
+		};
+		92D412861C8BBC2E00A9078C /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+				92D412871C8BBC3800A9078C /* CreateTalk */,
+			);
+			name = Talk;
+			sourceTree = "<group>";
+		};
+		92D412871C8BBC3800A9078C /* CreateTalk */ = {
+			isa = PBXGroup;
+			children = (
+				92D412881C8BBC4500A9078C /* CreateTalkTableViewController.swift */,
+			);
+			name = CreateTalk;
 			sourceTree = "<group>";
 		};
 		92E7FA361C8AEF1F00AAEA57 = {
@@ -402,6 +423,7 @@
 		92E7FB011C8B0F1F00AAEA57 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
+				92D412861C8BBC2E00A9078C /* Talk */,
 				92E7FB1F1C8B286A00AAEA57 /* AllTrips */,
 				92E7FB201C8B287100AAEA57 /* AddTrip */,
 			);
@@ -695,6 +717,7 @@
 				92E7FB241C8B329B00AAEA57 /* DatePickerDialog.swift in Sources */,
 				92E7FAFB1C8B046B00AAEA57 /* ALView+PureLayout.m in Sources */,
 				920C13971C8B85BC00AE093D /* TripEntity.swift in Sources */,
+				92D412851C8BB85900A9078C /* TalkEntity.swift in Sources */,
 				92E7FB151C8B148300AAEA57 /* NavigationViewController.swift in Sources */,
 				92E7FB1E1C8B24AD00AAEA57 /* TripTableViewCell.swift in Sources */,
 				92E7FB171C8B14ED00AAEA57 /* Image.swift in Sources */,
@@ -705,6 +728,7 @@
 				92E7FAAF1C8AFED900AAEA57 /* THStyleButton.swift in Sources */,
 				82DA85E91C8B42A700ADB899 /* FlightSearchResultTableViewCell.swift in Sources */,
 				92E7FB111C8B0FEC00AAEA57 /* TabBarItem.swift in Sources */,
+				92D412891C8BBC4500A9078C /* CreateTalkTableViewController.swift in Sources */,
 				92D412831C8B941A00A9078C /* TripsHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
