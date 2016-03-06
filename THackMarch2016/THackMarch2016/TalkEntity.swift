@@ -22,8 +22,37 @@ class TalkEntity: Object {
     return tripUniqId + authorId
   }
   
-  static var allTrips: Results<TripEntity> {
-    return realmDataBase.objects(TripEntity)
+  static var allTrips: Results<TalkEntity> {
+    return realmDataBase.objects(TalkEntity)
+  }
+  
+  func calculateCouldParticipate() {
+    if authorId == ClientModel.sharedInstance.facebookId {
+      couldParticipate = false
+      return
+    }
+    
+    let query = PFQuery(className:"Talk")
+    query.whereKey("tripUniqId", equalTo: tripUniqId)
+    query.getFirstObjectInBackgroundWithBlock { (talk, error) -> Void in
+      guard let talk = talk else {
+        return
+      }
+      
+      let relation = talk.relationForKey("Users")
+      let query = relation.query().whereKey("facebookID", equalTo: ClientModel.sharedInstance.facebookId)
+      query.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
+        self.couldParticipate = (object == nil)
+      })
+    }
+  }
+  
+  private(set) var couldParticipate: Bool = true {
+    didSet {
+      if oldValue != couldParticipate {
+        NSNotificationCenter.defaultCenter().postNotificationName("UpdateCouldParticipate", object: nil)
+      }
+    }
   }
   
   func add(tripEntity: TripEntity, completion: () -> ()) {
@@ -58,11 +87,12 @@ class TalkEntity: Object {
     }
   }
   
-  func addCollaboratingPerson(personFacebookId: String) {
+  func addCollaboratingPerson(personFacebookId: String, completion: () -> ()) {
     let query = PFQuery(className:"Talk")
     query.whereKey("tripUniqId", equalTo: tripUniqId)
     query.getFirstObjectInBackgroundWithBlock { (talk, error) -> Void in
       guard let talk = talk else {
+        completion()
         return
       }
       
@@ -70,11 +100,13 @@ class TalkEntity: Object {
       userQuery.whereKey("facebookID", equalTo: personFacebookId)
       userQuery.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
         guard let user = user else {
+          completion()
           return
         }
         let relation = talk.relationForKey("Users")
         relation.addObject(user)
         talk.saveInBackground()
+        completion()
       })
     }
   }
@@ -106,6 +138,7 @@ class TalkEntity: Object {
           realmDataBase.add(tripEntity)
         })
         
+        tripEntity.calculateCouldParticipate()
       }
       
       completion()

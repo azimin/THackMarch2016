@@ -90,6 +90,15 @@ extension TripsViewController: UITableViewDataSource {
     if segue.identifier == "ShowTalkEdit" {
       let viewController = segue.destinationViewController as! CreateTalkTableViewController
       viewController.trip = sender as! TripEntity
+    } else if segue.identifier == "ShowTalk" { 
+      let talk = sender as! TalkEntity
+      talk.calculateCouldParticipate()
+      
+      let viewController = segue.destinationViewController as! TalkTableViewController
+      viewController.talk = talk
+    } else if segue.identifier == "ShowTripEvents" { 
+      let viewController = segue.destinationViewController as! SeachTalkTableViewController
+      viewController.trip = sender as! TripEntity
     }
   }
 }
@@ -102,6 +111,20 @@ extension TripsViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     (self.tabBarController as? AZTabBarController)?.setHidden(true, animated: true)
-    self.performSegueWithIdentifier("ShowTalkEdit", sender: allTrips[indexPath.section])
+    
+    let trip = allTrips[indexPath.section]
+    
+    switch TripEntityType(rawValue: trip.status)! {
+    case .Talk:
+      if trip.myTalk != nil {
+        self.performSegueWithIdentifier("ShowTalk", sender: trip.myTalk)
+      } else {
+        self.performSegueWithIdentifier("ShowTalkEdit", sender: trip)
+      }
+    case .Collaborate:
+      self.performSegueWithIdentifier("ShowTripEvents", sender: trip)
+    default:
+      return
+    }
   }
 }

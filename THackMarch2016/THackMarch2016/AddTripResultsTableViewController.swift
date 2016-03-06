@@ -19,6 +19,7 @@ class AddTripResultsTableViewController: UITableViewController {
   var departure: String?
   var destination: String?
   var date: String?
+  var type: TripEntityType!
   var flights = [Flight]()
   
   override func viewDidLoad() {
@@ -59,6 +60,7 @@ class AddTripResultsTableViewController: UITableViewController {
     tripEntity.fromCity = departure ?? ""
     tripEntity.toCity = destination ?? ""
     tripEntity.time = flight.duration
+    tripEntity.status = type.rawValue
     
     let dateFormat = NSDateFormatter()
     dateFormat.dateFormat = "YYYY-MM-dd"

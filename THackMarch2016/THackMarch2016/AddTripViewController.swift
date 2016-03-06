@@ -36,7 +36,14 @@ class AddTripViewController: UIViewController {
       destVC.departure = departureTextField.text
       destVC.destination = destinationTextField.text
       destVC.date = dateTextField.text
+      destVC.type = switcher.on ? .Talk : .Collaborate
     }
+  }
+  
+  
+  @IBOutlet weak var switcher: UISwitch!
+  @IBAction func switchAction(sender: UISwitch) {
+    
   }
   
 }
