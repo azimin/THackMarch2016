@@ -38,9 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func presentNesessaryWindow() {
-    ClientModel.sharedInstance.fetchData()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     if FBSDKAccessToken.currentAccessToken() != nil {
+      
+      ClientModel.sharedInstance.fetchData()
+      TripEntity.loadAllRelationships { () -> () in
+        NSNotificationCenter.defaultCenter().postNotificationName("UpdateTrips", object: nil)
+      }
+      
       window?.rootViewController = storyboard.instantiateInitialViewController()
     } else {
       window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")

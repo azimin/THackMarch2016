@@ -72,6 +72,7 @@ class AddTripResultsTableViewController: UITableViewController {
       ClientModel.sharedInstance.tripsCount += 1
     }
     ClientModel.sharedInstance.fetchBack()
+    tripEntity.add()
     
     NSNotificationCenter.defaultCenter().postNotificationName("UpdateTrips", object: nil)
     self.navigationController?.popToRootViewControllerAnimated(true)

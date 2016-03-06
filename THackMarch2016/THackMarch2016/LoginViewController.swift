@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
       } else if result.isCancelled {
         print("Cencelled")
       } else {
+        DataModelController.sharedInstance.setup()
         self.fetchUser()
       }
     }

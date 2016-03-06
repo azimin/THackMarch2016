@@ -16,6 +16,10 @@ class ClientModel: Object, ObjectSingletone {
     return value
   }()
   
+  static func resetObject() {
+    sharedInstance = value
+  }
+  
   dynamic var facebookId: String = ""
   dynamic var name: String?
   dynamic var gender: String?
@@ -39,9 +43,7 @@ class ClientModel: Object, ObjectSingletone {
       return
     }
     
-    let query = PFQuery(className:"AppUser")
-    query.whereKey("facebookID", equalTo: facebookId)
-    query.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
+    requestCurrentUser { (object) -> () in
       guard let object = object else {
         return
       }
@@ -55,13 +57,11 @@ class ClientModel: Object, ObjectSingletone {
         self.collaborationsCount = object["collaborationsCount"] as? Int ?? 0
         self.creditsCount = object["creditsCount"] as? Int ?? 0
       })
-    })
+    }
   }
   
   func fetchBack() {
-    let query = PFQuery(className:"AppUser")
-    query.whereKey("facebookID", equalTo: facebookId)
-    query.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
+    requestCurrentUser { (object) -> () in
       guard let object = object else {
         return
       }
@@ -72,8 +72,15 @@ class ClientModel: Object, ObjectSingletone {
       object["creditsCount"] = self.creditsCount
       
       object.saveInBackground()
-    })
-
+    }
+  }
+  
+  func requestCurrentUser(completion: (PFObject?) -> ()) {
+    let query = PFQuery(className:"AppUser")
+    query.whereKey("facebookID", equalTo: facebookId)
+    query.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
+      completion(object)
+    }
   }
   
   func loadImage() {

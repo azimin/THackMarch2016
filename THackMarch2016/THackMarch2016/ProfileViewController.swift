@@ -49,6 +49,19 @@ class ProfileViewController: UITableViewController {
     photoImageView.layer.cornerRadius = photoImageView.frame.height / 2
   }
   
+  
+  @IBAction func logoutAction(sender: AnyObject) {
+    let login = FBSDKLoginManager()
+    login.logOut()
+    
+    realmDataBase.writeFunction { () -> Void in
+      realmDataBase.deleteAll()
+    }
+    ClientModel.resetObject()
+    
+    (UIApplication.sharedApplication().delegate as! AppDelegate).presentNesessaryWindow()
+  }
+  
   /*
   // MARK: - Navigation
   

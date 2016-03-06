@@ -538,7 +538,13 @@
                             <outlet property="delegate" destination="Odg-zp-cu5" id="4vP-cq-tzs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kDg-99-dQe"/>
+                    <navigationItem key="navigationItem" id="kDg-99-dQe">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="eVb-H0-bng">
+                            <connections>
+                                <action selector="logoutAction:" destination="Odg-zp-cu5" id="Mq4-vS-wRg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
@@ -1220,6 +1226,6 @@
         <image name="img_trip-icon_plane" width="23" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mmE-2z-zCZ"/>
+        <segue reference="4wZ-6k-peV"/>
     </inferredMetricsTieBreakers>
 </document>
