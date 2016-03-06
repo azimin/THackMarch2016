@@ -122,7 +122,12 @@ extension TripsViewController: UITableViewDelegate {
         self.performSegueWithIdentifier("ShowTalkEdit", sender: trip)
       }
     case .Collaborate:
-      self.performSegueWithIdentifier("ShowTripEvents", sender: trip)
+      if let talk = TalkEntity.isParticipate(trip) {
+        self.performSegueWithIdentifier("ShowTalk", sender: talk)
+      } else {
+        self.performSegueWithIdentifier("ShowTripEvents", sender: trip)
+      }
+      
     default:
       return
     }

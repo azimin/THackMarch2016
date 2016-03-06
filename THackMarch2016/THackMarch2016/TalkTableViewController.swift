@@ -24,9 +24,12 @@ class TalkTableViewController: UITableViewController {
   @IBOutlet weak var descriptionLabel: UILabel!
   
   @IBOutlet weak var collaboratorsButton: THStyleButton!
+  @IBOutlet weak var participateButton: THStyleButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    participateButton.hidden = true
     
     photoImageView.sd_setImageWithURL(NSURL(string: "https://graph.facebook.com/\(talk.authorId)/picture?height=220"), placeholderImage: nil) { (image, error, cache, url) -> Void in
       self.activityIndicator.hidden = true
@@ -65,6 +68,10 @@ class TalkTableViewController: UITableViewController {
   }
   
   func updateTable() {
+    if talk.couldParticipate {
+      participateButton.hidden = false
+    }
+    
     tableView.reloadData()
   }
   

@@ -11,6 +11,10 @@ import RealmSwift
 import Parse
 import SDWebImage
 
+class TalkId: Object {
+  dynamic var talkId = ""
+}
+
 class ClientModel: Object, ObjectSingletone {
   static var sharedInstance: ClientModel = {
     return value
@@ -28,6 +32,8 @@ class ClientModel: Object, ObjectSingletone {
   dynamic var tripsCount = 0
   dynamic var collaborationsCount = 0
   dynamic var creditsCount = 0
+  
+  let talksIds = List<TalkId>()
   
   dynamic var imageData: NSData?
   
@@ -57,6 +63,23 @@ class ClientModel: Object, ObjectSingletone {
         self.collaborationsCount = object["collaborationsCount"] as? Int ?? 0
         self.creditsCount = object["creditsCount"] as? Int ?? 0
       })
+      
+      object.relationForKey("Talks").query().findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+        for object in objects ?? [] {
+          let id = object["uniqId"]
+          let predicate = NSPredicate(format: "talkId == %@", argumentArray: [id])
+          if realmDataBase.objects(TalkId).filter(predicate).first == nil {
+            realmDataBase.writeFunction({ () -> Void in
+              let talkId = TalkId()
+              talkId.talkId = id as! String
+              
+              realmDataBase.add(talkId)
+              ClientModel.sharedInstance.talksIds.append(talkId)
+            })
+          }
+        }
+      })
+      
     }
   }
   

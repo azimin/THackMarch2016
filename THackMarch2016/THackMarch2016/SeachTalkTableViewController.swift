@@ -22,12 +22,12 @@ class SeachTalkTableViewController: UITableViewController {
     
     let query = PFQuery(className: "Trip")
     query.whereKey("uniqId", equalTo: trip.uniqId)
-    query.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
+    query.getFirstObjectInBackgroundWithBlock { [weak this = self] (object, error) -> Void in
       guard let object = object else {
         return
       }
       TalkEntity.loadForCurrentTripObject(object, completion: { () -> () in
-        self.updateContent()
+        this?.updateContent()
       })
     }
   }
@@ -65,6 +65,19 @@ class SeachTalkTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return 54
+  }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    self.performSegueWithIdentifier("ShowTalk", sender: talks[indexPath.row])
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let talk = sender as! TalkEntity
+    talk.calculateCouldParticipate()
+    
+    let viewController = segue.destinationViewController as! TalkTableViewController
+    viewController.talk = talk
   }
   /*
   // Override to support conditional editing of the table view.

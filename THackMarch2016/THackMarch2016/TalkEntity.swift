@@ -18,6 +18,21 @@ class TalkEntity: Object {
   dynamic var numberOfCollaboratingPeople = 0
   dynamic var tripUniqId = ""
   
+  static func isParticipate(trip: TripEntity) -> TalkEntity? {
+    var ids = Set<String>()
+    for talkId in ClientModel.sharedInstance.talksIds {
+      ids.insert(talkId.talkId)
+    }
+    
+    for object in realmDataBase.objects(TalkEntity).filter("tripUniqId == %@", trip.uniqId) {
+      if ids.contains(object.uniqId) {
+        return object
+      }
+    }
+    
+    return nil
+  }
+  
   var uniqId: String {
     return tripUniqId + authorId
   }
@@ -106,6 +121,20 @@ class TalkEntity: Object {
         let relation = talk.relationForKey("Users")
         relation.addObject(user)
         talk.saveInBackground()
+        
+        user.relationForKey("Talks").addObject(talk)
+        user.saveInBackground()
+        
+        if (ClientModel.sharedInstance.facebookId == personFacebookId) {
+          realmDataBase.writeFunction({ () -> Void in
+            let talkId = TalkId()
+            talkId.talkId = talk["uniqId"] as! String
+            
+            realmDataBase.add(talkId)
+            ClientModel.sharedInstance.talksIds.append(talkId)
+          })
+        }
+        
         completion()
       })
     }
@@ -116,7 +145,6 @@ class TalkEntity: Object {
     for trip in TalkEntity.allTrips {
       keys.append(trip.uniqId)
     }
-    
     
     let relation = tripObject.relationForKey("Talks")
     let query = relation.query()

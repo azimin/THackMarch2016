@@ -234,7 +234,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7b5-cM-wqN">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="wBb-5c-mVN">
+                        <barButtonItem key="rightBarButtonItem" image="btn_add" id="wBb-5c-mVN">
                             <connections>
                                 <action selector="addTripButtonAction:" destination="OZU-wa-2sq" id="OYz-ff-PiT"/>
                             </connections>
@@ -886,6 +886,7 @@
                         <outlet property="creditsLabel" destination="uNM-Gx-9sq" id="TDJ-Uw-bOZ"/>
                         <outlet property="descriptionLabel" destination="EjR-Ox-aTi" id="TIE-xd-olm"/>
                         <outlet property="nameLabel" destination="A5F-p5-521" id="7BD-QN-DE8"/>
+                        <outlet property="participateButton" destination="FIa-CY-Jf2" id="K2c-mO-iwz"/>
                         <outlet property="photoImageView" destination="cNO-4Z-Oj4" id="0Ft-kF-qj9"/>
                     </connections>
                 </tableViewController>
@@ -900,9 +901,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="tBg-LP-93E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="OhA-HO-paL" customClass="SeachTalkTableViewCell" customModule="THackMarch2016" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="OhA-HO-paL" customClass="SeachTalkTableViewCell" customModule="THackMarch2016" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OhA-HO-paL" id="QbP-RX-9eA">
@@ -949,7 +950,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3q-Pb-IkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="-245"/>
+            <point key="canvasLocation" x="2965" y="-245"/>
         </scene>
         <!--Add Trip Results Table View Controller-->
         <scene sceneID="9TA-6F-wGa">
@@ -1334,6 +1335,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_add" width="20" height="20"/>
         <image name="img_logo_bag" width="109" height="124"/>
         <image name="img_logo_circle" width="250" height="250"/>
         <image name="img_photo_template" width="110" height="110"/>
