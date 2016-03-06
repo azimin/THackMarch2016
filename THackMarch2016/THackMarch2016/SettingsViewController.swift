@@ -8,10 +8,31 @@
 
 import UIKit
 
+extension SettingsViewController: UITableViewDelegate {
+  
+}
+
+extension SettingsViewController: UITableViewDataSource {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return titles.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell")
+    cell!.textLabel?.text = titles[indexPath.row]
+    return cell!
+  }
+}
+
 class SettingsViewController: UIViewController {
+  
+  @IBOutlet weak var tableView: UITableView!
+  let titles = ["Change credentials", "Rate Us", "Feedback", "Marketplace"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.delegate = self
+    tableView.dataSource = self
     self.title = "SETTINGS"
   }
   
