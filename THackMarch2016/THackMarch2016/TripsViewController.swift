@@ -95,6 +95,6 @@ extension TripsViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     (self.tabBarController as? AZTabBarController)?.setHidden(true, animated: true)
-    self.performSegueWithIdentifier("ShowTrip", sender: nil)
+    self.performSegueWithIdentifier("ShowTalk", sender: nil)
   }
 }
