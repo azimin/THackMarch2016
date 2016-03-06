@@ -64,9 +64,7 @@ class TalkEntity: Object {
   
   private(set) var couldParticipate: Bool = true {
     didSet {
-      if oldValue != couldParticipate {
-        NSNotificationCenter.defaultCenter().postNotificationName("UpdateCouldParticipate", object: nil)
-      }
+      NSNotificationCenter.defaultCenter().postNotificationName("UpdateCouldParticipate", object: nil)
     }
   }
   

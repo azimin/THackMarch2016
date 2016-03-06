@@ -26,11 +26,14 @@ class TalkTableViewController: UITableViewController {
   @IBOutlet weak var collaboratorsButton: THStyleButton!
   @IBOutlet weak var participateButton: THStyleButton!
   
+  var shouldJumpBack = false
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     participateButton.hidden = true
-    
+    talk.calculateCouldParticipate()   
+     
     photoImageView.sd_setImageWithURL(NSURL(string: "https://graph.facebook.com/\(talk.authorId)/picture?height=220"), placeholderImage: nil) { (image, error, cache, url) -> Void in
       self.activityIndicator.hidden = true
     }
@@ -51,6 +54,18 @@ class TalkTableViewController: UITableViewController {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateTable"), name: "UpdateCouldParticipate", object: nil)
   }
   
+  func goBack() {
+    self.navigationController?.popToRootViewControllerAnimated(true)
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    if self.navigationController?.viewControllers.indexOf(self) ?? 0 == NSNotFound {
+      print("Swag")
+    }
+  }
+
   func calculateCaloborationCount() {
     self.collaboratorsButton.setTitle("Loading...", forState: .Normal)
     let query = PFQuery(className:"Talk")
@@ -68,10 +83,7 @@ class TalkTableViewController: UITableViewController {
   }
   
   func updateTable() {
-    if talk.couldParticipate {
-      participateButton.hidden = false
-    }
-    
+    participateButton.hidden = !talk.couldParticipate
     tableView.reloadData()
   }
   
@@ -82,6 +94,8 @@ class TalkTableViewController: UITableViewController {
   }
   
   @IBAction func participateButtonAction(sender: THStyleButton) {
+    shouldJumpBack = true
+    
     SVProgressHUD.show()
     talk.addCollaboratingPerson(ClientModel.sharedInstance.facebookId) {
       self.talk.calculateCouldParticipate()
