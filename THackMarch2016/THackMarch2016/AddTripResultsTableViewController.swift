@@ -35,14 +35,40 @@ class AddTripResultsTableViewController: UITableViewController {
     }
     
     SkyScannerAuth.sharedInstance.getLocationName(departure) { departureId in
+      print("departureId", departureId)
       SkyScannerAuth.sharedInstance.getLocationName(destination) { destinationId in
-        let fp = FlightsParser()
-        fp.flightFromAirport(departureId, toAirport: destinationId, onData: date, withCabinClass: "Business") {
-          flights in
-            self.flights = flights
-            self.tableView.reloadData()
-        }
+        print("destinationId", destinationId)
+        self.requestFlight(departureId, destinationId: destinationId, date: date, completion: { (isEmpty) -> () in
+          if isEmpty {
+            dispatchAfter(2.5, executionBlock: { () -> () in
+              self.requestFlight(departureId, destinationId: destinationId, date: date, completion: { (isEmpty) -> () in
+                if isEmpty {
+                  dispatchAfter(2.5, executionBlock: { () -> () in
+                    self.requestFlight(departureId, destinationId: destinationId, date: date, completion: { (isEmpty) -> () in
+                      if isEmpty {
+                        dispatchAfter(2.5, executionBlock: { () -> () in
+                          print("I CANT")
+                        })
+                      }
+                    })
+                  })
+                }
+              })
+            })
+          }
+        })
       }
+    }
+  }
+  
+  func requestFlight(departureId: String, destinationId: String, date: String, completion: (isEmpty: Bool) -> ()) {
+    let fp = FlightsParser()
+    fp.flightFromAirport(departureId, toAirport: destinationId, onData: date, withCabinClass: "Business") {
+      flights in
+      print("flights", flights)
+      self.flights = flights
+      self.tableView.reloadData()
+      completion(isEmpty: flights.count == 0)
     }
   }
   
