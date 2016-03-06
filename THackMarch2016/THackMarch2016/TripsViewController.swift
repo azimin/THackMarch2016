@@ -18,6 +18,7 @@ class TripsViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     (self.tabBarController as? AZTabBarController)?.setHidden(false, animated: true)
+    tableView.reloadData()
   }
   
   override func viewDidLoad() {
@@ -27,6 +28,7 @@ class TripsViewController: UIViewController {
     self.navigationController?.interactivePopGestureRecognizer?.enabled = false
     NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateData"), name: "UpdateTrips", object: nil)
   }
+
   
   func updateData() {
     allTrips = TripEntity.allTrips
@@ -82,6 +84,28 @@ extension TripsViewController: UITableViewDataSource {
     
     if indexPath.section == allTrips.count - 1 {
       cell.addSeperator()
+    }
+    
+    switch TripEntityType(rawValue: trip.status)! {
+    case .Talk:
+      if trip.myTalk != nil {
+        cell.statusButton.setTitle("EDIT TOPIC", forState: .Normal)
+        cell.statusButton.setTitleColor(UIColor(hex: "A7DD38"), forState: .Normal)
+      } else {
+        cell.statusButton.setTitle("ADD TOPIC", forState: .Normal)
+        cell.statusButton.setTitleColor(UIColor(hex: "F12138"), forState: .Normal)
+      }
+    case .Collaborate:
+      if let _ = TalkEntity.isParticipate(trip) {
+        cell.statusButton.setTitle("VIEW TOPIC", forState: .Normal)
+        cell.statusButton.setTitleColor(UIColor(hex: "A7DD38"), forState: .Normal)
+      } else {
+        cell.statusButton.setTitle("SELECT TOPIC", forState: .Normal)
+        cell.statusButton.setTitleColor(UIColor(hex: "F12138"), forState: .Normal)
+      }
+      
+    default:
+      break
     }
     
     return cell

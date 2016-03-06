@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HelperMethods {
   static func makeArrowFrom(pointA: String, toPointB pointB: String) -> String {
@@ -34,6 +35,9 @@ class AddTripResultsTableViewController: UITableViewController {
       return
     }
     
+    
+    SVProgressHUD.show()
+    
     SkyScannerAuth.sharedInstance.getLocationName(departure) { departureId in
       print("departureId", departureId)
       SkyScannerAuth.sharedInstance.getLocationName(destination) { destinationId in
@@ -47,7 +51,7 @@ class AddTripResultsTableViewController: UITableViewController {
                     self.requestFlight(departureId, destinationId: destinationId, date: date, completion: { (isEmpty) -> () in
                       if isEmpty {
                         dispatchAfter(2.5, executionBlock: { () -> () in
-                          print("I CANT")
+                          SVProgressHUD.dismiss()
                         })
                       }
                     })
@@ -68,6 +72,11 @@ class AddTripResultsTableViewController: UITableViewController {
       print("flights", flights)
       self.flights = flights
       self.tableView.reloadData()
+      
+      if flights.count > 0 {
+        SVProgressHUD.dismiss()
+      }
+      
       completion(isEmpty: flights.count == 0)
     }
   }

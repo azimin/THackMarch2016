@@ -28,7 +28,7 @@ class CreateTalkTableViewController: UITableViewController {
     talk.name = titleTextField.text ?? ""
     talk.cost = Int(costTextField.text ?? "") ?? 0
     talk.talkDescription = descriptionTextField.text ?? ""
-    talk.authorId = ClientModel.sharedInstance.facebookId
+    talk.authorId = "10208883158461635"// ClientModel.sharedInstance.facebookId // 10208883158461635
     
     realmDataBase.writeFunction { () -> Void in
       realmDataBase.add(talk)

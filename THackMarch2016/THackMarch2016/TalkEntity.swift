@@ -101,44 +101,56 @@ class TalkEntity: Object {
   }
   
   func addCollaboratingPerson(personFacebookId: String, completion: () -> ()) {
+    
+//    dispatchAfter(2.5) { () -> () in
+//      completion()
+//    }
+
+    
+    print("Start collab quert with \(tripUniqId)")
     let query = PFQuery(className:"Talk")
     query.whereKey("tripUniqId", equalTo: tripUniqId)
     query.getFirstObjectInBackgroundWithBlock { (talk, error) -> Void in
+      print("Continue collab quert with \(talk)")
       guard let talk = talk else {
         completion()
         return
       }
       
+      print("Continue collab with FBID with \(personFacebookId)")
       let userQuery = PFQuery(className:"AppUser")
       userQuery.whereKey("facebookID", equalTo: personFacebookId)
       userQuery.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
+        print("End collab with user \(user)")
         guard let user = user else {
           completion()
           return
         }
+        
         let relation = talk.relationForKey("Users")
         relation.addObject(user)
+        
         talk.saveInBackground()
         
         user.relationForKey("Talks").addObject(talk)
         user.saveInBackground()
         
+        completion()
+        
         if (ClientModel.sharedInstance.facebookId == personFacebookId) {
-          realmDataBase.writeFunction({ () -> Void in
+          try! realmDataBase.write({ () -> Void in
             let talkId = TalkId()
             talkId.talkId = talk["uniqId"] as! String
-            
             realmDataBase.add(talkId)
             ClientModel.sharedInstance.talksIds.append(talkId)
           })
         }
-        
-        completion()
       })
     }
   }
   
   static func loadForCurrentTripObject(tripObject: PFObject, completion: () -> ()) {
+      
     var keys: [String] = []
     for trip in TalkEntity.allTrips {
       keys.append(trip.uniqId)
@@ -166,7 +178,6 @@ class TalkEntity: Object {
         
         tripEntity.calculateCouldParticipate()
       }
-      
       completion()
     })
   }
