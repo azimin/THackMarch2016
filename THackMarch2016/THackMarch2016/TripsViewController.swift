@@ -24,6 +24,7 @@ class TripsViewController: UIViewController {
     super.viewDidLoad()
     self.title = "TRIPS"
     
+    self.navigationController?.interactivePopGestureRecognizer?.enabled = false
     NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateData"), name: "UpdateTrips", object: nil)
   }
   

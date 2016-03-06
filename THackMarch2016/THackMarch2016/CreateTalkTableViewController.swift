@@ -28,7 +28,7 @@ class CreateTalkTableViewController: UITableViewController {
     talk.name = titleTextField.text ?? ""
     talk.cost = Int(costTextField.text ?? "") ?? 0
     talk.talkDescription = descriptionTextField.text ?? ""
-    talk.authorId = "10208883158461635"// ClientModel.sharedInstance.facebookId
+    talk.authorId = ClientModel.sharedInstance.facebookId
     
     realmDataBase.writeFunction { () -> Void in
       realmDataBase.add(talk)
@@ -42,6 +42,7 @@ class CreateTalkTableViewController: UITableViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     let controller = segue.destinationViewController as! TalkTableViewController
     controller.talk = sender as! TalkEntity
+    controller.shouldJumpBack = true
   }
 }
 
