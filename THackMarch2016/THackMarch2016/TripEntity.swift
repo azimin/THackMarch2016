@@ -47,21 +47,33 @@ class TripEntity: Object {
       
       let relation = user.relationForKey("Trips")
       
-      let object = PFObject(className: "Trip")
-      object["fromCity"] = self.fromCity
-      object["toCity"] = self.toCity
-      object["time"] = self.time
-      object["flightNumber"] = self.flightNumber
-      object["status"] = self.status
-      object["date"] = self.date
-      object["uniqId"] = self.uniqId
+      var tripObjectToRelations: PFObject!
       
-      try! object.save()
-      
-      relation.addObject(object)
-      
-      object.saveInBackground()
-      user.saveInBackground()
+      let query = PFQuery(className:"Trip")
+      query.whereKey("uniqId", equalTo: self.uniqId)
+      query.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
+        if object == nil {
+          let tripObject = PFObject(className: "Trip")
+          tripObject["fromCity"] = self.fromCity
+          tripObject["toCity"] = self.toCity
+          tripObject["time"] = self.time
+          tripObject["flightNumber"] = self.flightNumber
+          tripObject["status"] = self.status
+          tripObject["date"] = self.date
+          tripObject["uniqId"] = self.uniqId
+          
+          try! tripObject.save()
+          tripObjectToRelations = tripObject
+        } else {
+          tripObjectToRelations = object
+        }
+        
+        relation.addObject(tripObjectToRelations)
+        
+        tripObjectToRelations.saveInBackground()
+        user.saveInBackground()
+
+      }
     }
   }
   

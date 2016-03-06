@@ -102,9 +102,9 @@ class TalkEntity: Object {
   
   func addCollaboratingPerson(personFacebookId: String, completion: () -> ()) {
     
-//    dispatchAfter(2.5) { () -> () in
-//      completion()
-//    }
+    dispatchAfter(3) { () -> () in
+      completion()
+    }
 
     
     print("Start collab quert with \(tripUniqId)")
